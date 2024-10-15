@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Composter/ComposterProject2/static/css/main.084a39d4.css",
-    "main.js": "/Composter/ComposterProject2/static/js/main.6a2c561a.js",
-    "static/js/453.e63d80e2.chunk.js": "/Composter/ComposterProject2/static/js/453.e63d80e2.chunk.js",
-    "index.html": "/Composter/ComposterProject2/index.html",
-    "main.084a39d4.css.map": "/Composter/ComposterProject2/static/css/main.084a39d4.css.map",
-    "main.6a2c561a.js.map": "/Composter/ComposterProject2/static/js/main.6a2c561a.js.map",
-    "453.e63d80e2.chunk.js.map": "/Composter/ComposterProject2/static/js/453.e63d80e2.chunk.js.map"
+    "main.css": "/Composter/static/css/main.084a39d4.css",
+    "main.js": "/Composter/static/js/main.342700e6.js",
+    "static/js/453.e63d80e2.chunk.js": "/Composter/static/js/453.e63d80e2.chunk.js",
+    "index.html": "/Composter/index.html",
+    "main.084a39d4.css.map": "/Composter/static/css/main.084a39d4.css.map",
+    "main.342700e6.js.map": "/Composter/static/js/main.342700e6.js.map",
+    "453.e63d80e2.chunk.js.map": "/Composter/static/js/453.e63d80e2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.084a39d4.css",
-    "static/js/main.6a2c561a.js"
+    "static/js/main.342700e6.js"
   ]
 }
