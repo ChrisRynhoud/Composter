@@ -1,0 +1,32 @@
+.grid {
+  display: flex;
+  flex-direction: column;
+  width: 400px;  /* Adjust size as needed */
+  height: 400px; /* Adjust size as needed */
+  flex-wrap: nowrap; /* Ensure rows aren't wrapping */
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 5px;
+  height: 5px;
+  border: 1px solid #ccc;
+}
+
+.cell.type-0 { background-color: white; }  /* Empty */
+.cell.type-1 { background-color: gray; }   /* Metal */
+.cell.type-2 { background-color: yellow; } /* Sand */
+.cell.type-3 { background-color: blue; }   /* Water */
+.cell.type-4 { background-color: lightgray; } /* Gas */
+.cell.type-5 { background-color: red; }    /* Fire */
+
+.controls {
+  margin-top: 10px;
+}
+
+.controls button.selected {
+  border: 2px solid red;
+}
