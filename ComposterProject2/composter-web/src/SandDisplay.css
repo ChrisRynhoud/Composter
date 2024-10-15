@@ -1,9 +1,14 @@
+.sand-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .grid {
   display: flex;
   flex-direction: column;
-  width: 400px;  /* Adjust size as needed */
-  height: 400px; /* Adjust size as needed */
-  flex-wrap: nowrap; /* Ensure rows aren't wrapping */
+  width: auto; /* Let width adjust automatically */
+  height: auto; /* Let height adjust automatically */
 }
 
 .row {
