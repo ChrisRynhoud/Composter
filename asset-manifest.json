@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Composter/ComposterProject2/static/css/main.084a39d4.css",
+    "main.js": "/Composter/ComposterProject2/static/js/main.6a2c561a.js",
+    "static/js/453.e63d80e2.chunk.js": "/Composter/ComposterProject2/static/js/453.e63d80e2.chunk.js",
+    "index.html": "/Composter/ComposterProject2/index.html",
+    "main.084a39d4.css.map": "/Composter/ComposterProject2/static/css/main.084a39d4.css.map",
+    "main.6a2c561a.js.map": "/Composter/ComposterProject2/static/js/main.6a2c561a.js.map",
+    "453.e63d80e2.chunk.js.map": "/Composter/ComposterProject2/static/js/453.e63d80e2.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.084a39d4.css",
+    "static/js/main.6a2c561a.js"
+  ]
+}
