@@ -7,7 +7,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter basename="/Composter/ComposterProject2">
+    <BrowserRouter basename="/Composter">
       <App />
     </BrowserRouter>
   </React.StrictMode>,
