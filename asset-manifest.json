@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Composter/static/css/main.084a39d4.css",
-    "main.js": "/Composter/static/js/main.342700e6.js",
+    "main.js": "/Composter/static/js/main.c77aeab5.js",
     "static/js/453.e63d80e2.chunk.js": "/Composter/static/js/453.e63d80e2.chunk.js",
     "index.html": "/Composter/index.html",
     "main.084a39d4.css.map": "/Composter/static/css/main.084a39d4.css.map",
-    "main.342700e6.js.map": "/Composter/static/js/main.342700e6.js.map",
+    "main.c77aeab5.js.map": "/Composter/static/js/main.c77aeab5.js.map",
     "453.e63d80e2.chunk.js.map": "/Composter/static/js/453.e63d80e2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.084a39d4.css",
-    "static/js/main.342700e6.js"
+    "static/js/main.c77aeab5.js"
   ]
 }
