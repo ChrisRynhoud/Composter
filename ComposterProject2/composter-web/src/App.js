@@ -155,7 +155,7 @@ const App = () => {
   }, [step, speed, running]);
 
   return (
-    <>
+    <Router basename="/Composter">
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -165,7 +165,7 @@ const App = () => {
                onMouseDown={handleMouseDown}
                onMouseUp={handleMouseUp}
                onMouseMove={handleMouseMove}
-               onContextMenu={(e) => e.preventDefault()}>
+               onContextMenu={(e) => e.preventDefault())}>
             <div className="grid-container">
               <SandDisplay
                 title="Falling Sand"
@@ -190,7 +190,7 @@ const App = () => {
           </div>
         } />
       </Routes>
-    </>
+    </Router>
   );
 };
 
