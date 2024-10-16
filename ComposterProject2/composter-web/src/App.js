@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import SandDisplay from './SandDisplay';
 import Home from './pages/Home';
@@ -155,7 +155,7 @@ const App = () => {
   }, [step, speed, running]);
 
   return (
-    <>
+    <Router>
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -190,7 +190,7 @@ const App = () => {
           </div>
         } />
       </Routes>
-    </>
+    </Router>
   );
 };
 
