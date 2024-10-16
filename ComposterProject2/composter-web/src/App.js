@@ -155,43 +155,43 @@ const App = () => {
   }, [step, speed, running]);
 
   return (
-    <Router>
-      <Navigation />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/sanddisplay" element={
-          <div className="App"
-               onMouseDown={handleMouseDown}
-               onMouseUp={handleMouseUp}
-               onMouseMove={handleMouseMove}
-               onContextMenu={(e) => e.preventDefault()}>
-            <div className="grid-container">
-              <SandDisplay
-                title="Falling Sand"
-                numRows={numRows}
-                numCols={numCols}
-                buttonNames={buttonNames}
-                onClick={(row, col, tool) => locationClicked(row, col, tool)}
-                grid={grid}
-                setSpeed={setSpeed}
-                selectedTool={selectedTool}
-                setSelectedTool={setSelectedTool}
-              />
-            </div>
-            <button onClick={() => setRunning(!running)}>
-              {running ? "Pause" : "Run"}
-            </button>
-            {buttonNames.map((name, index) => (
-              <button key={index} onClick={() => setSelectedTool(index)}>
-                {name}
-              </button>
-            ))}
+  <Router>
+    <Navigation />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/sanddisplay" element={
+        <div className="App"
+             onMouseDown={handleMouseDown}
+             onMouseUp={handleMouseUp}
+             onMouseMove={handleMouseMove}
+             onContextMenu={(e) => e.preventDefault()}>
+          <div className="grid-container">
+            <SandDisplay
+              title="Falling Sand"
+              numRows={numRows}
+              numCols={numCols}
+              buttonNames={buttonNames}
+              onClick={(row, col, tool) => locationClicked(row, col, tool)}
+              grid={grid}
+              setSpeed={setSpeed}
+              selectedTool={selectedTool}
+              setSelectedTool={setSelectedTool}
+            />
           </div>
-        } />
-      </Routes>
-    </Router>
-  );
-};
+          <button onClick={() => setRunning(!running)}>
+            {running ? "Pause" : "Run"}
+          </button>
+          {buttonNames.map((name, index) => (
+            <button key={index} onClick={() => setSelectedTool(index)}>
+              {name}
+            </button>
+          ))}
+        </div>
+      } />
+    </Routes>
+  </Router>
+);
+
 
 export default App;
