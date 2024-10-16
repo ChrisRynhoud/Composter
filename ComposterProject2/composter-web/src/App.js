@@ -155,7 +155,7 @@ const App = () => {
   }, [step, speed, running]);
 
   return (
-    <Router basename="/Composter">
+    <>
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -190,7 +190,7 @@ const App = () => {
           </div>
         } />
       </Routes>
-    </Router>
+    </>
   );
 };
 
