@@ -1,0 +1,11 @@
+/* DataVisualization.css */
+
+.data-visualization {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.data-visualization h2 {
+  color: #333;
+  margin-bottom: 20px;
+}

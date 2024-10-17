@@ -1,10 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Navigation from './Navigation';
 import Home from './pages/Home';
 import About from './pages/About';
 import SandDisplay from './SandDisplay';
+import PlantData from './pages/PlantData';
 
 const EMPTY = 0;
 const METAL = 1;
@@ -95,7 +96,6 @@ const App = () => {
         }
       }
     }
-
     // Process fire separately to ensure proper movement
     const fireQueue = [];
     for (let x = 0; x < numRows; x++) {
@@ -105,7 +105,6 @@ const App = () => {
         }
       }
     }
-
     // Update fire positions
     fireQueue.forEach(({ x, y }) => {
       const direction = Math.random() > 0.5 ? 1 : -1;
@@ -117,7 +116,6 @@ const App = () => {
         newGrid[x][y] = EMPTY;
       }
     });
-
     // Process gas separately to ensure proper movement
     const gasQueue = [];
     for (let x = 0; x < numRows; x++) {
@@ -127,7 +125,6 @@ const App = () => {
         }
       }
     }
-
     // Update gas positions
     gasQueue.forEach(({ x, y }) => {
       const gasDirection = Math.random() > 0.5 ? 1 : -1;
@@ -139,7 +136,6 @@ const App = () => {
         newGrid[x][y] = EMPTY;
       }
     });
-
     setGrid(newGrid);
     console.log('Step function executed');
   }, [grid, numRows, numCols]);
@@ -160,12 +156,13 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/plantdata" element={<PlantData />} />
         <Route path="/sanddisplay" element={
           <div className="App"
-               onMouseDown={handleMouseDown}
-               onMouseUp={handleMouseUp}
-               onMouseMove={handleMouseMove}
-               onContextMenu={(e) => e.preventDefault()}>
+            onMouseDown={handleMouseDown}
+            onMouseUp={handleMouseUp}
+            onMouseMove={handleMouseMove}
+            onContextMenu={(e) => e.preventDefault()}>
             <div className="grid-container">
               <SandDisplay
                 title="Falling Sand"
