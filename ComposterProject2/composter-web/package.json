@@ -21,7 +21,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "node server.js",  // changed this line
+    "start": "node server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -49,8 +49,9 @@
   "devDependencies": {
     "gh-pages": "^6.2.0"
   },
-  "engines": {  // added this section
-    "node": "16.x"
+  "engines": {
+    "node": "16.x",
+    "npm": "8.x"
   },
   "homepage": "https://chrisrynhoud.github.io/Composter"
 }
