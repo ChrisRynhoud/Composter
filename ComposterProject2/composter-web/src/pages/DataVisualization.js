@@ -7,9 +7,9 @@ function DataVisualization({ type }) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const url = type === 'plant' ? 'http://localhost:5000/plant-data' 
-                : type === 'foodscrap' ? 'http://localhost:5000/food-scrap-data'
-                : 'http://localhost:5000/compost-data';
+    const url = type === 'plant' ? 'https://new-backend-app-35dbde982dde.herokuapp.com/plant-data' 
+                : type === 'foodscrap' ? 'https://new-backend-app-35dbde982dde.herokuapp.com/food-scrap-data'
+                : 'https://new-backend-app-35dbde982dde.herokuapp.com/compost-data';
 
     axios.get(url)
       .then(response => {

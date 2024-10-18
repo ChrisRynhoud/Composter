@@ -29,27 +29,27 @@ function About() {
 
   const handleComposterSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:5000/submit-compost-data', composterData)
+    axios.post('https://new-backend-app-35dbde982dde.herokuapp.com/submit-compost-data', composterData)
       .then(response => alert(response.data))
       .catch(error => console.error('Error:', error));
   };
 
   const handleFoodScrapSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:5000/submit-food-scrap-data', foodScrapData)
+    axios.post('https://new-backend-app-35dbde982dde.herokuapp.com/submit-food-scrap-data', foodScrapData)
       .then(response => alert(response.data))
       .catch(error => console.error('Error:', error));
   };
 
   const handleResetData = (type) => {
-    axios.post('http://localhost:5000/reset-data', { password, type })
+    axios.post('https://new-backend-app-35dbde982dde.herokuapp.com/reset-data', { password, type })
       .then(response => alert(response.data))
       .catch(error => console.error('Error:', error));
   };
 
   const handleImportData = (type) => {
     const data = JSON.parse(importData);
-    axios.post('http://localhost:5000/import-data', { password, type, data })
+    axios.post('https://new-backend-app-35dbde982dde.herokuapp.com/import-data', { password, type, data })
       .then(response => alert(response.data))
       .catch(error => console.error('Error:', error));
   };

@@ -23,20 +23,20 @@ function PlantData() {
 
   const handlePlantSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:5000/submit-plant-data', plantData)
+    axios.post('https://new-backend-app-35dbde982dde.herokuapp.com/submit-plant-data', plantData)
       .then(response => alert(response.data))
       .catch(error => console.error('Error:', error));
   };
 
   const handleResetData = () => {
-    axios.post('http://localhost:5000/reset-plant-data', { password })
+    axios.post('https://new-backend-app-35dbde982dde.herokuapp.com/reset-plant-data', { password })
       .then(response => alert(response.data))
       .catch(error => console.error('Error:', error));
   };
 
   const handleImportData = () => {
     const data = JSON.parse(importData);
-    axios.post('http://localhost:5000/import-plant-data', { password, data })
+    axios.post('https://new-backend-app-35dbde982dde.herokuapp.com/import-plant-data', { password, data })
       .then(response => alert(response.data))
       .catch(error => console.error('Error:', error));
   };
