@@ -1,0 +1,12 @@
+.graphs-section {
+  padding: 20px;
+}
+
+.graphs-section h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.graphs-section .recharts-wrapper {
+  margin: auto;
+}

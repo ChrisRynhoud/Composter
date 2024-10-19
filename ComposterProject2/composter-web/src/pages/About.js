@@ -4,7 +4,7 @@ import axios from 'axios';
 import DataVisualization from './DataVisualization';
 
 function About() {
-  const [composterData, setComposterData] = useState({ composter: '', compostProduced: '', date: '' });
+  const [composterData, setComposterData] = useState({ composter: '1', compostProduced: '', date: '' });
   const [foodScrapData, setFoodScrapData] = useState({ foodScrapSaved: '', date: '' });
   const [password, setPassword] = useState('');
   const [importData, setImportData] = useState('');
@@ -57,13 +57,16 @@ function About() {
   return (
     <div className="about-container">
       <h1>About Us (Data Submission)</h1>
-
       <div className="data-entry">
         <h2>Compost Data Submission</h2>
         <form onSubmit={handleComposterSubmit}>
           <label>
-            Which Composter (1,2, or 3):
-            <input type="number" name="composter" value={composterData.composter} onChange={handleComposterChange} />
+            Which Composter:
+            <select name="composter" value={composterData.composter} onChange={handleComposterChange}>
+              <option value="1">Electric Composter (Reencle)</option>
+              <option value="2">Worm Bin</option>
+              <option value="3">Tumbler</option>
+            </select>
           </label>
           <label>
             How Much Compost Produced:
@@ -76,7 +79,6 @@ function About() {
           <button type="submit">Submit</button>
         </form>
       </div>
-
       <div className="data-entry">
         <h2>Food Scrap Data Submission</h2>
         <form onSubmit={handleFoodScrapSubmit}>
@@ -91,7 +93,6 @@ function About() {
           <button type="submit">Submit</button>
         </form>
       </div>
-
       <div className="data-reset-import">
         <h2>Data Management</h2>
         <div>
@@ -111,10 +112,8 @@ function About() {
           <button onClick={() => handleImportData('foodScrap')}>Import Food Scrap Data</button>
         </div>
       </div>
-
       <h2>Compost Production</h2>
       <DataVisualization type="compost" />
-
       <h2>Food Scraps Saved</h2>
       <DataVisualization type="foodscrap" />
     </div>
