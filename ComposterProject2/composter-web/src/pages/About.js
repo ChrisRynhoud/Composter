@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './About.css';
 import axios from 'axios';
-import DataVisualization from './DataVisualization';
 
 function About() {
   const [composterData, setComposterData] = useState({ composter: '1', compostProduced: '', date: '' });
@@ -112,10 +111,6 @@ function About() {
           <button onClick={() => handleImportData('foodScrap')}>Import Food Scrap Data</button>
         </div>
       </div>
-      <h2>Compost Production</h2>
-      <DataVisualization type="compost" />
-      <h2>Food Scraps Saved</h2>
-      <DataVisualization type="foodscrap" />
     </div>
   );
 }

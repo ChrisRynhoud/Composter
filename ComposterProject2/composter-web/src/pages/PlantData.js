@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import DataVisualization from './DataVisualization';
 import './PlantData.css';
 
 function PlantData() {
@@ -113,7 +112,6 @@ function PlantData() {
           <button onClick={handleImportData}>Import Plant Data</button>
         </div>
       </div>
-      <DataVisualization type="plant" />
     </div>
   );
 }
