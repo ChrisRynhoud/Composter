@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.17262243.css",
-    "main.js": "/static/js/main.568b38cb.js",
+    "main.css": "/static/css/main.1e755884.css",
+    "main.js": "/static/js/main.fb864737.js",
     "static/js/453.491f8a9b.chunk.js": "/static/js/453.491f8a9b.chunk.js",
     "static/media/composter1.jpg": "/static/media/composter1.491f3bf4e885a7a04256.jpg",
     "static/media/composter2.jpg": "/static/media/composter2.9a6fa325d8a9ccb62baf.jpg",
@@ -11,12 +11,12 @@
     "static/media/carrots.jpg": "/static/media/carrots.a70122583a978d6230ed.jpg",
     "static/media/data-visualization.jpg": "/static/media/data-visualization.e2c664b6e3e01d9e1a9b.jpg",
     "index.html": "/index.html",
-    "main.17262243.css.map": "/static/css/main.17262243.css.map",
-    "main.568b38cb.js.map": "/static/js/main.568b38cb.js.map",
+    "main.1e755884.css.map": "/static/css/main.1e755884.css.map",
+    "main.fb864737.js.map": "/static/js/main.fb864737.js.map",
     "453.491f8a9b.chunk.js.map": "/static/js/453.491f8a9b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.17262243.css",
-    "static/js/main.568b38cb.js"
+    "static/css/main.1e755884.css",
+    "static/js/main.fb864737.js"
   ]
 }
