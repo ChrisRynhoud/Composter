@@ -13,29 +13,29 @@ nav {
   align-items: center;
 }
 
-nav .top-row, .bottom-row {
+.top-row, .bottom-row {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-nav .logo {
+.logo {
   display: flex;
   align-items: center;
 }
 
-nav .logo-link {
+.logo-link {
   display: flex;
   align-items: center;
 }
 
-nav .logo-img {
-  height: 140px;  /* Adjusted size */
+.logo-img {
+  height: 140px; /* Adjusted size */
   margin-right: 10px;
 }
 
-nav .search-bar {
+.search-bar {
   display: flex;
   align-items: center;
   flex-grow: 1;
@@ -43,7 +43,7 @@ nav .search-bar {
   margin: 0 20px;
 }
 
-nav .search-bar input {
+.search-bar input {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
@@ -51,7 +51,7 @@ nav .search-bar input {
   outline: none;
 }
 
-nav ul {
+ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -59,12 +59,12 @@ nav ul {
   align-items: center;
 }
 
-nav ul li {
+ul li {
   margin: 0 20px;
   position: relative;
 }
 
-nav ul li a {
+ul li a {
   text-decoration: none;
   color: #333;
   font-weight: bold;
@@ -73,7 +73,7 @@ nav ul li a {
   position: relative;
 }
 
-nav ul li a::before {
+ul li a::before {
   content: '';
   position: absolute;
   width: 100%;
@@ -86,23 +86,23 @@ nav ul li a::before {
   transition: all 0.3s ease-in-out;
 }
 
-nav ul li a:hover::before {
+ul li a:hover::before {
   visibility: visible;
   transform: scaleX(1);
 }
 
-nav ul li a:hover {
+ul li a:hover {
   color: #61dafb;
   transform: scale(1.1);
 }
 
-nav ul li a.active {
+ul li a.active {
   color: #61dafb;
   border-bottom: 2px solid #61dafb;
   border-radius: 5px;
 }
 
-nav ul li ul {
+ul li ul {
   display: none;
   position: absolute;
   top: 100%;
@@ -111,17 +111,18 @@ nav ul li ul {
   padding: 10px 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
+  z-index: 1001; /* Ensures dropdown appears above other elements */
 }
 
-nav ul li:hover ul {
+ul li:hover ul {
   display: block;
 }
 
-nav ul li ul li {
+ul li ul li {
   margin: 0;
 }
 
-nav ul li ul li a {
+ul li ul li a {
   color: #333;
 }
 
