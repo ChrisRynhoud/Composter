@@ -25,12 +25,12 @@ import placeholder21 from '../assets/images/placeholder.jpg';
 import placeholder22 from '../assets/images/placeholder.jpg';
 import placeholder23 from '../assets/images/placeholder.jpg';
 import placeholder24 from '../assets/images/placeholder.jpg';
-import placeholder25 from '../.assets/images/placeholder.jpg';
+import placeholder25 from '../assets/images/placeholder.jpg';
 import placeholder26 from '../assets/images/placeholder.jpg';
 import placeholder27 from '../assets/images/placeholder.jpg';
 import placeholder28 from '../assets/images/placeholder.jpg';
 import placeholder29 from '../assets/images/placeholder.jpg';
-import placeholder30 from '../.assets/images/placeholder.jpg';
+import placeholder30 from '../assets/images/placeholder.jpg';
 
 const Showcase = () => {
   const gallery = [
