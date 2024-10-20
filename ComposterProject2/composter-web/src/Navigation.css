@@ -13,6 +13,10 @@ nav {
   align-items: center;
 }
 
+body {
+  margin-top: 200px; /* Add margin to prevent header overlap */
+}
+
 .top-row, .bottom-row {
   width: 100%;
   display: flex;
