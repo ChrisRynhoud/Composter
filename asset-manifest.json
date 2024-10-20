@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.98fdca41.css",
-    "main.js": "/static/js/main.023cb13b.js",
-    "static/js/453.491f8a9b.chunk.js": "/static/js/453.491f8a9b.chunk.js",
+    "main.css": "/static/css/main.ff9792de.css",
+    "main.js": "/static/js/main.5f220ac9.js",
+    "static/js/453.e63d80e2.chunk.js": "/static/js/453.e63d80e2.chunk.js",
     "static/media/logo.gif": "/static/media/logo.82cdb5eafe7fe1a35c85.gif",
     "static/media/composter1.jpg": "/static/media/composter1.491f3bf4e885a7a04256.jpg",
     "static/media/composter2.jpg": "/static/media/composter2.9a6fa325d8a9ccb62baf.jpg",
@@ -11,12 +11,12 @@
     "static/media/carrots.jpg": "/static/media/carrots.a70122583a978d6230ed.jpg",
     "static/media/data-visualization.jpg": "/static/media/data-visualization.e2c664b6e3e01d9e1a9b.jpg",
     "index.html": "/index.html",
-    "main.98fdca41.css.map": "/static/css/main.98fdca41.css.map",
-    "main.023cb13b.js.map": "/static/js/main.023cb13b.js.map",
-    "453.491f8a9b.chunk.js.map": "/static/js/453.491f8a9b.chunk.js.map"
+    "main.ff9792de.css.map": "/static/css/main.ff9792de.css.map",
+    "main.5f220ac9.js.map": "/static/js/main.5f220ac9.js.map",
+    "453.e63d80e2.chunk.js.map": "/static/js/453.e63d80e2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.98fdca41.css",
-    "static/js/main.023cb13b.js"
+    "static/css/main.ff9792de.css",
+    "static/js/main.5f220ac9.js"
   ]
 }
