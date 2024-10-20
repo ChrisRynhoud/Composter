@@ -1,13 +1,41 @@
 /* Navigation.css */
-
 nav {
-  background: linear-gradient(to right, #333, #61dafb);
+  background: white;
   padding: 10px 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+
+nav .logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+nav .search-bar {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  max-width: 600px;
+  margin: 0 20px;
+}
+
+nav .search-bar input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
 }
 
 nav ul {
@@ -15,17 +43,17 @@ nav ul {
   padding: 0;
   margin: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
 nav ul li {
   margin: 0 20px;
+  position: relative;
 }
 
 nav ul li a {
   text-decoration: none;
-  color: white;
+  color: #333;
   font-weight: bold;
   transition: color 0.3s, transform 0.3s;
   font-size: 18px;
@@ -39,7 +67,7 @@ nav ul li a::before {
   height: 2px;
   bottom: -5px;
   left: 0;
-  background-color: #21a1f1;
+  background-color: #61dafb;
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out;
@@ -51,12 +79,35 @@ nav ul li a:hover::before {
 }
 
 nav ul li a:hover {
-  color: #21a1f1;
+  color: #61dafb;
   transform: scale(1.1);
 }
 
 nav ul li a.active {
-  color: #fff;
-  border-bottom: 2px solid #21a1f1;
+  color: #61dafb;
+  border-bottom: 2px solid #61dafb;
   border-radius: 5px;
+}
+
+nav ul li ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+nav ul li:hover ul {
+  display: block;
+}
+
+nav ul li ul li {
+  margin: 0;
+}
+
+nav ul li ul li a {
+  color: #333;
 }
