@@ -1,11 +1,20 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Navigation from './Navigation';
 import Home from './pages/Home';
 import About from './pages/About';
 import SandDisplay from './SandDisplay';
 import PlantData from './pages/PlantData';
+import Electric from './pages/Electric';
+import WormBin from './pages/WormBin';
+import Tumbler from './pages/Tumbler';
+import Contact from './pages/Contact';
+import Resources from './pages/Resources';
+import References from './pages/References';
+import Timeline from './pages/Timeline';
+import Showcase from './pages/Showcase';
+import Compostle from './pages/Compostle';
 
 const EMPTY = 0;
 const METAL = 1;
