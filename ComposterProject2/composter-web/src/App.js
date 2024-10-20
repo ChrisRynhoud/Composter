@@ -151,18 +151,31 @@ const App = () => {
   }, [step, speed, running]);
 
   return (
-    <>
-      <Navigation />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/plantdata" element={<PlantData />} />
-        <Route path="/sanddisplay" element={
-          <div className="App"
+  <>
+    <Navigation />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/plantdata" element={<PlantData />} />
+      <Route path="/electric" element={<Electric />} />
+      <Route path="/wormbin" element={<WormBin />} />
+      <Route path="/tumbler" element={<Tumbler />} />
+      <Route path="/references" element={<References />} />
+      <Route path="/resources" element={<Resources />} />
+      <Route path="/compostle" element={<Compostle />} />
+      <Route path="/timeline" element={<Timeline />} />
+      <Route path="/showcase" element={<Showcase />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route
+        path="/sanddisplay"
+        element={
+          <div
+            className="App"
             onMouseDown={handleMouseDown}
             onMouseUp={handleMouseUp}
             onMouseMove={handleMouseMove}
-            onContextMenu={(e) => e.preventDefault()}>
+            onContextMenu={(e) => e.preventDefault()}
+          >
             <div className="grid-container">
               <SandDisplay
                 title="Falling Sand"
@@ -185,10 +198,12 @@ const App = () => {
               </button>
             ))}
           </div>
-        } />
-      </Routes>
-    </>
-  );
+        }
+      />
+    </Routes>
+  </>
+);
+
 };
 
 export default App;

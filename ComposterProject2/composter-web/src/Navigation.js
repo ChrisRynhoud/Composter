@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navigation.css';
-import logo from './assets/images/logo.gif'; // Ensure this path is correct and the gif is in the assets folder
+import logo from './assets/images/logo.gif';
 
 function Navigation() {
   return (
