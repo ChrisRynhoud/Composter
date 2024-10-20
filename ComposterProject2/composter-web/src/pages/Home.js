@@ -6,7 +6,6 @@ import composter2 from '../assets/images/composter2.jpg';
 import composter3 from '../assets/images/composter3.jpg';
 import dataVisualization from '../assets/images/data-visualization.jpg';
 import carrots from '../assets/images/carrots.jpg';
-import GraphsSection from './GraphsSection';
 
 function Home() {
   return (
@@ -16,8 +15,6 @@ function Home() {
         <p className="hero-subtitle">Exploring Sustainable Solutions with Ms. Rynhoud's Special Ed Class</p>
         <img src={heroImage} alt="Composter Project" className="hero-image" />
       </header>
-
-      <GraphsSection />
 
       <section className="project-details" data-aos="fade-up">
         <h2>About the Project</h2>
@@ -36,9 +33,9 @@ function Home() {
       <section className="project-goals" data-aos="fade-up">
         <h2>Project Goals</h2>
         <ul>
-          <li>p6</li>
-          <li>p5</li>
-          <li>p4</li>
+          <li>Improve plant growth</li>
+          <li>Enhance soil quality</li>
+          <li>Promote sustainable practices</li>
         </ul>
         <img src={carrots} alt="Growing Carrots" className="carrot-image" />
       </section>

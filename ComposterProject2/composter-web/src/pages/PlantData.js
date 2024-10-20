@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import GraphsSection from './GraphsSection';
 import './PlantData.css';
 
 function PlantData() {
@@ -47,7 +48,10 @@ function PlantData() {
 
   return (
     <div className="plant-container">
+      <GraphsSection />
+
       <h1>Plant Data Submission</h1>
+
       <div className="data-entry">
         <h2>Carrot Height Data Submission</h2>
         <form onSubmit={handlePlantSubmit}>
@@ -87,6 +91,7 @@ function PlantData() {
           <button type="submit">Submit</button>
         </form>
       </div>
+      
       <div className="data-reset-import">
         <h2>Data Management</h2>
         <div>

@@ -1,50 +1,44 @@
 /* Home.css */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
-.home-container {
+body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background: #f9f9f9;
+}
+
+.home-container {
   color: #333;
-  background: #fff;
   padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .hero-section {
-  color: #333;
   text-align: center;
   padding: 50px 20px;
-  animation: fadeIn 2s ease-in;
-  background: #f1f1f1;
+  background: #fff;
   border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
 }
 
 .hero-image {
   width: 100%;
   max-width: 600px;
   height: auto;
-  animation: scaleUp 1s ease-in-out;
 }
 
 .project-details,
 .website-info,
-.project-goals,
-.data-submission {
+.project-goals {
+  background: #fff;
   padding: 40px 20px;
-  background: #f9f9f9;
   margin: 20px 0;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.project-details:hover,
-.website-info:hover,
-.project-goals:hover,
-.data-submission:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .composter-images {
@@ -56,8 +50,7 @@
 
 .composter-images img,
 .data-image,
-.carrot-image,
-.data-submission-image {
+.carrot-image {
   width: 100%;
   max-width: 300px;
   height: auto;
@@ -65,15 +58,18 @@
   margin: 10px auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.composter-images img:hover,
-.data-image:hover,
-.carrot-image:hover,
-.data-submission-image:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+.project-goals ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.project-goals li {
+  padding: 10px;
+  background: #f1f1f1;
+  margin: 5px 0;
+  border-radius: 5px;
 }
 
 button {
@@ -82,39 +78,26 @@ button {
   color: white;
   padding: 10px 20px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
   font-size: 16px;
   margin: 10px 2px;
   border-radius: 5px;
-  transition: background-color 0.3s, transform 0.3s;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
   background-color: #21a1f1;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 footer {
   background: linear-gradient(to right, #61dafb, #21a1f1);
   color: white;
   text-align: center;
-  padding: 20px 10px;
+  padding: 20px;
   border-top: 5px solid #fff;
-  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 2s ease-in;
 }
 
-/* Keyframes for animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes scaleUp {
-  from { transform: scale(0.9); }
-  to { transform: scale(1); }
+@media (min-width: 768px) {
+  .project-details, .website-info, .project-goals {
+    padding: 50px;
+  }
 }
