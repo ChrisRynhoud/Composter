@@ -17,8 +17,13 @@ nav .logo {
   align-items: center;
 }
 
-nav .logo img {
-  height: 40px;
+nav .logo-link {
+  display: flex;
+  align-items: center;
+}
+
+nav .logo-img {
+  height: 280px;  /* Adjusted size */
   margin-right: 10px;
 }
 

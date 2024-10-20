@@ -7,7 +7,9 @@ function Navigation() {
   return (
     <nav>
       <div className="logo">
-        <img src={logo} alt="Calmposting Logo" />
+        <NavLink exact to="/" className="logo-link">
+          <img src={logo} alt="Calmposting Logo" className="logo-img" />
+        </NavLink>
         <NavLink exact to="/">Calmposting</NavLink>
       </div>
       <div className="search-bar">
