@@ -70,6 +70,23 @@ body {
   transform: translateY(-2px);
 }
 
+.data-reset-import {
+  background: white;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.data-reset-import h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.data-reset-import label {
+  margin-bottom: 10px;
+}
+
 footer {
   background: linear-gradient(to right, #61dafb, #21a1f1);
   color: white;
@@ -83,7 +100,7 @@ footer {
     padding: 40px;
   }
   
-  .data-entry {
+  .data-entry, .data-reset-import {
     padding: 40px;
   }
 }
