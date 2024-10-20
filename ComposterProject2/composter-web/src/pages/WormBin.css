@@ -1,0 +1,42 @@
+/* WormBin.css */
+.wormbin-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.wormbin-container h1 {
+  margin-bottom: 20px;
+}
+
+.wormbin-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin: 20px 0;
+}
+
+.infographic {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info-box {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-box h2 {
+  margin-bottom: 10px;
+}
+
+.info-box p {
+  margin: 0;
+}

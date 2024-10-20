@@ -1,0 +1,59 @@
+/* Resources.css */
+.resources-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.resources-container h1 {
+  margin-bottom: 20px;
+}
+
+.template-download {
+  margin-bottom: 40px;
+}
+
+.template-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin: 10px auto;
+  display: block;
+  border: 2px solid #61dafb;
+  border-radius: 10px;
+}
+
+.resource-list h2 {
+  margin-bottom: 20px;
+}
+
+.resource {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.resource-image {
+  width: 150px;
+  height: 150px;
+  margin-right: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.resource-info {
+  text-align: left;
+}
+
+.resource-info h3 a {
+  text-decoration: none;
+  color: #61dafb;
+}
+
+.resource-info h3 a:hover {
+  text-decoration: underline;
+}

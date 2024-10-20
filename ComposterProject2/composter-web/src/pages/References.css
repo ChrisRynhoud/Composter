@@ -1,0 +1,49 @@
+/* References.css */
+.references-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.references-container h1, .references-container h2 {
+  text-align: center;
+}
+
+.references-container h1 {
+  margin-bottom: 20px;
+}
+
+.references-container h2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.references-container ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.references-container li {
+  margin-bottom: 20px;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.references-container a {
+  color: #61dafb;
+  text-decoration: none;
+}
+
+.references-container a:hover {
+  text-decoration: underline;
+}
+
+.references-container p {
+  margin: 0;
+}

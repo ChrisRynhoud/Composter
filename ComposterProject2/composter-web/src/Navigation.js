@@ -20,7 +20,7 @@ function Navigation() {
           <li><NavLink to="/about" activeClassName="active">About</NavLink></li>
           <li><NavLink to="/plantdata" activeClassName="active">Data</NavLink></li>
           <li className="dropdown">
-            <NavLink to="/electric" activeClassName="active">How they Work</NavLink>
+            <NavLink to="/electric" activeClassName="active">Composting</NavLink>
             <ul className="dropdown-menu">
               <li><NavLink to="/electric">Electric Composter</NavLink></li>
               <li><NavLink to="/wormbin">Worm Bin</NavLink></li>
