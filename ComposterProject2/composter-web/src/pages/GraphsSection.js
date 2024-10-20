@@ -14,7 +14,7 @@ function GraphsSection() {
       .catch(error => console.error('Error fetching compost data:', error));
 
     axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/food-scrap-data')
-      .then(response => setFoodScrapData(response.data))
+      .then(response => setFoodScrapData(aggregateFoodScrapData(response.data)))
       .catch(error => console.error('Error fetching food scrap data:', error));
 
     axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/plant-data')
@@ -24,32 +24,47 @@ function GraphsSection() {
 
   const aggregateCompostData = (data) => {
     const aggregated = data.reduce((acc, curr) => {
-      if (!acc[curr.composter]) {
-        acc[curr.composter] = 0;
+      const composter = curr.composter;
+      const produced = Number(curr.compostProduced);
+      const index = acc.findIndex(item => item.composter === composter);
+      if (index === -1) {
+        acc.push({ composter, compostProduced: produced });
+      } else {
+        acc[index].compostProduced += produced;
       }
-      acc[curr.composter] += curr.compostProduced;
       return acc;
-    }, {});
+    }, []);
+    return aggregated;
+  };
 
-    return Object.keys(aggregated).map(key => ({
-      composter: key,
-      compostProduced: aggregated[key]
-    }));
+  const aggregateFoodScrapData = (data) => {
+    const aggregated = data.reduce((acc, curr) => {
+      const date = curr.date;
+      const foodScrapSaved = Number(curr.foodScrapSaved);
+      const index = acc.findIndex(item => item.date === date);
+      if (index === -1) {
+        acc.push({ date, foodScrapSaved });
+      } else {
+        acc[index].foodScrapSaved += foodScrapSaved;
+      }
+      return acc;
+    }, []);
+    return aggregated;
   };
 
   const aggregatePlantData = (data) => {
     const aggregated = data.reduce((acc, curr) => {
-      if (!acc[curr.composter]) {
-        acc[curr.composter] = 0;
+      const composter = curr.composter;
+      const height = Number(curr.carrotHeight);
+      const index = acc.findIndex(item => item.composter === composter);
+      if (index === -1) {
+        acc.push({ composter, carrotHeight: height });
+      } else {
+        acc[index].carrotHeight += height;
       }
-      acc[curr.composter] += curr.carrotHeight;
       return acc;
-    }, {});
-
-    return Object.keys(aggregated).map(key => ({
-      composter: key,
-      carrotHeight: aggregated[key]
-    }));
+    }, []);
+    return aggregated;
   };
 
   return (
