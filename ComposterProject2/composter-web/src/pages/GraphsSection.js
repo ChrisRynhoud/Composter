@@ -3,7 +3,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, LineChart,
 import axios from 'axios';
 import './GraphsSection.css';
 
-function GraphsSection() {
+function GraphsSection({ selectedGraph }) {
   const [compostData, setCompostData] = useState([]);
   const [foodScrapData, setFoodScrapData] = useState([]);
   const [plantData, setPlantData] = useState([]);
@@ -12,11 +12,9 @@ function GraphsSection() {
     axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/compost-data')
       .then(response => setCompostData(aggregateCompostData(response.data)))
       .catch(error => console.error('Error fetching compost data:', error));
-
     axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/food-scrap-data')
       .then(response => setFoodScrapData(aggregateFoodScrapData(response.data)))
       .catch(error => console.error('Error fetching food scrap data:', error));
-
     axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/plant-data')
       .then(response => setPlantData(aggregatePlantData(response.data)))
       .catch(error => console.error('Error fetching plant data:', error));
@@ -69,35 +67,36 @@ function GraphsSection() {
 
   return (
     <div className="graphs-section">
-      <h2>Compost Production</h2>
-      <BarChart width={600} height={300} data={compostData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="composter" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="compostProduced" fill="#82ca9d" />
-      </BarChart>
-
-      <h2>Food Scraps Saved from Landfill</h2>
-      <LineChart width={600} height={300} data={foodScrapData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="date" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Line type="monotone" dataKey="foodScrapSaved" stroke="#8884d8" />
-      </LineChart>
-
-      <h2>Average Carrot Height</h2>
-      <BarChart width={600} height={300} data={plantData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="composter" />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar dataKey="carrotHeight" fill="#82ca9d" />
-      </BarChart>
+      {selectedGraph === 'Compost Production' && (
+        <BarChart width={800} height={400} data={compostData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="composter" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="compostProduced" fill="#82ca9d" />
+        </BarChart>
+      )}
+      {selectedGraph === 'Food Scraps Saved' && (
+        <LineChart width={800} height={400} data={foodScrapData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="date" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Line type="monotone" dataKey="foodScrapSaved" stroke="#8884d8" />
+        </LineChart>
+      )}
+      {selectedGraph === 'Average Carrot Height' && (
+        <BarChart width={800} height={400} data={plantData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="composter" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="carrotHeight" fill="#82ca9d" />
+        </BarChart>
+      )}
     </div>
   );
 }
