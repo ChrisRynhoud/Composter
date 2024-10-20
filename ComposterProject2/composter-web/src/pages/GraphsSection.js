@@ -10,7 +10,7 @@ function GraphsSection() {
 
   useEffect(() => {
     axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/compost-data')
-      .then(response => setCompostData(response.data))
+      .then(response => setCompostData(aggregateCompostData(response.data)))
       .catch(error => console.error('Error fetching compost data:', error));
 
     axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/food-scrap-data')
@@ -18,9 +18,39 @@ function GraphsSection() {
       .catch(error => console.error('Error fetching food scrap data:', error));
 
     axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/plant-data')
-      .then(response => setPlantData(response.data))
+      .then(response => setPlantData(aggregatePlantData(response.data)))
       .catch(error => console.error('Error fetching plant data:', error));
   }, []);
+
+  const aggregateCompostData = (data) => {
+    const aggregated = data.reduce((acc, curr) => {
+      if (!acc[curr.composter]) {
+        acc[curr.composter] = 0;
+      }
+      acc[curr.composter] += curr.compostProduced;
+      return acc;
+    }, {});
+
+    return Object.keys(aggregated).map(key => ({
+      composter: key,
+      compostProduced: aggregated[key]
+    }));
+  };
+
+  const aggregatePlantData = (data) => {
+    const aggregated = data.reduce((acc, curr) => {
+      if (!acc[curr.composter]) {
+        acc[curr.composter] = 0;
+      }
+      acc[curr.composter] += curr.carrotHeight;
+      return acc;
+    }, {});
+
+    return Object.keys(aggregated).map(key => ({
+      composter: key,
+      carrotHeight: aggregated[key]
+    }));
+  };
 
   return (
     <div className="graphs-section">
