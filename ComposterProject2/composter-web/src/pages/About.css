@@ -7,7 +7,6 @@ body {
   padding: 0;
   box-sizing: border-box;
   background: #f9f9f9;
-  padding-top: 200px;
 }
 
 .about-container {
@@ -76,16 +75,18 @@ body {
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  padding: 40px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  grid-template-columns: 1fr;
+  gap: 40px;
 }
 
 .project-details,
 .website-info,
-.project-goals {
-  margin: 20px 0;
+.project-goals,
+.data-submission,
+.funding {
+  margin: 40px 0;
 }
 
 .composter-images {
@@ -98,7 +99,8 @@ body {
 .composter-images img,
 .data-image,
 .carrot-image,
-.data-submission-image {
+.data-submission-image,
+.funding-image {
   width: 100%;
   max-width: 300px;
   height: auto;
@@ -106,18 +108,6 @@ body {
   margin: 10px auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.project-goals ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.project-goals li {
-  padding: 10px;
-  background: #f1f1f1;
-  margin: 5px 0;
-  border-radius: 5px;
 }
 
 button {
@@ -171,7 +161,7 @@ button:hover {
 }
 
 @media (min-width: 768px) {
-  .project-details, .website-info, .project-goals {
+  .project-details, .website-info, .project-goals, .data-submission, .funding {
     padding: 50px;
   }
 }

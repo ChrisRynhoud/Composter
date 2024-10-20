@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Compostle.css';
-import fruitImage1 from '../assets/images/fruit1.jpg'; 
+import fruitImage1 from '../assets/images/fruit1.jpg';
 import fruitImage2 from '../assets/images/fruit2.jpg';
 import fruitImage3 from '../assets/images/fruit3.jpg';
 import fruitImage4 from '../assets/images/fruit4.jpg';
@@ -24,7 +24,6 @@ const items = [
   { name: 'Metal 3', type: 'trash', image: metalImage3 },
   { name: 'Metal 4', type: 'trash', image: metalImage4 },
   { name: 'Metal 5', type: 'trash', image: metalImage5 },
-  // Add more items as needed
 ];
 
 function Compostle() {
@@ -33,7 +32,7 @@ function Compostle() {
   const [timeLeft, setTimeLeft] = useState(70);  // 1:10 is 70 seconds
   const [streak, setStreak] = useState(0);
   const [multiplier, setMultiplier] = useState(1);
-  
+
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft((prevTime) => (prevTime > 0 ? prevTime - 1 : 0));
@@ -46,8 +45,10 @@ function Compostle() {
     return () => clearInterval(timer);
   }, [timeLeft]);
 
-  const handleDrop = (binType) => {
-    if (currentItem.type === binType) {
+  const handleDrop = (e, binType) => {
+    e.preventDefault();
+    const draggedItemType = e.dataTransfer.getData('type');
+    if (draggedItemType === binType) {
       setPoints(points + 10 * multiplier);
       setStreak(streak + 1);
       if (streak + 1 >= 3) {
@@ -58,9 +59,12 @@ function Compostle() {
       setStreak(0);
       setMultiplier(1);
     }
-    
     const randomItem = items[Math.floor(Math.random() * items.length)];
     setCurrentItem(randomItem);
+  };
+
+  const handleDragStart = (e, type) => {
+    e.dataTransfer.setData('type', type);
   };
 
   return (
@@ -74,12 +78,26 @@ function Compostle() {
         <p>Multiplier: {multiplier}</p>
       </div>
       <div className="game-board">
-        <img src={currentItem.image} alt={currentItem.name} className="item" />
+        <img
+          src={currentItem.image}
+          alt={currentItem.name}
+          className="item"
+          draggable="true"
+          onDragStart={(e) => handleDragStart(e, currentItem.type)}
+        />
         <div className="bins">
-          <div className="bin compost-bin" onDrop={() => handleDrop('compost')}>
+          <div
+            className="bin compost-bin"
+            onDragOver={(e) => e.preventDefault()}
+            onDrop={(e) => handleDrop(e, 'compost')}
+          >
             <img src={compostBinImage} alt="Compost Bin" />
           </div>
-          <div className="bin trash-bin" onDrop={() => handleDrop('trash')}>
+          <div
+            className="bin trash-bin"
+            onDragOver={(e) => e.preventDefault()}
+            onDrop={(e) => handleDrop(e, 'trash')}
+          >
             <img src={trashBinImage} alt="Trash Bin" />
           </div>
         </div>

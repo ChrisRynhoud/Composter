@@ -27,6 +27,11 @@
   padding: 0;
 }
 
+.references-container ul.coding-references {
+  display: flex;
+  flex-direction: column;
+}
+
 .references-container li {
   margin-bottom: 20px;
   padding: 10px;

@@ -1,61 +1,77 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './Home.css';
-import composter1 from '../assets/images/composter1.jpg';
-import heroImage from '../assets/images/hero-image.jpg';
-import composter2 from '../assets/images/composter2.jpg';
-import composter3 from '../assets/images/composter3.jpg';
-import dataVisualization from '../assets/images/data-visualization.jpg';
-import carrots from '../assets/images/carrots.jpg';
+import calmImage from '../assets/images/calm.jpg';
+import image1 from '../assets/images/image1.jpg';
+import image2 from '../assets/images/image2.jpg';
+import image3 from '../assets/images/image3.jpg';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 function Home() {
+  const [foodScrapData, setFoodScrapData] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/food-scrap-data')
+      .then(response => setFoodScrapData(aggregateFoodScrapData(response.data)))
+      .catch(error => console.error('Error fetching food scrap data:', error));
+  }, []);
+
+  const aggregateFoodScrapData = (data) => {
+    const aggregated = data.reduce((acc, curr) => {
+      const date = curr.date;
+      const foodScrapSaved = Number(curr.foodScrapSaved);
+      const index = acc.findIndex(item => item.date === date);
+      if (index === -1) {
+        acc.push({ date, foodScrapSaved });
+      } else {
+        acc[index].foodScrapSaved += foodScrapSaved;
+      }
+      return acc;
+    }, []);
+    return aggregated;
+  };
+
   return (
     <div className="home-container">
-      <header className="hero-section" data-aos="fade-up">
-        <h1>Welcome to the Room N9 Special Ed Elyse Rynhoud Composter Project</h1>
-        <p className="hero-subtitle">Exploring Sustainable Solutions with Ms. Rynhoud's Special Ed Class</p>
-        <img src={heroImage} alt="Composter Project" className="hero-image" />
+      <header className="hero-section">
+        <h1>Welcome to the Calmposting Composter Project</h1>
+        <p className="hero-subtitle">Promoting Sustainable Solutions in Education</p>
+        <img src={calmImage} alt="Calm" className="hero-image" />
       </header>
 
       <div className="content">
-        <aside className="sidebar">
-          <h2>Menu</h2>
-          <ul>
-            <li>About</li>
-            <li>Website</li>
-            <li>Goals</li>
-          </ul>
-        </aside>
+        <section className="introduction">
+          <h2>About Our Project</h2>
+          <p>Our project aims to reduce green waste in schools by composting kitchen and cooking scraps right in the classroom.</p>
+        </section>
 
-        <main className="main-content">
-          <section className="project-details" data-aos="fade-up">
-            <h2>About the Project</h2>
-            <div className="composter-images" data-aos="fade-right">
-              <img src={composter1} alt="Composter 1" />
-              <img src={composter2} alt="Composter 2" />
-              <img src={composter3} alt="Composter 3" />
-            </div>
-          </section>
+        <section className="graph-section">
+          <h2>Total Food Scraps Saved</h2>
+          <BarChart width={800} height={400} data={foodScrapData}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="date" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="foodScrapSaved" fill="#82ca9d" />
+          </BarChart>
+        </section>
 
-          <section className="website-info" data-aos="fade-up">
-            <h2>Project Website</h2>
-            <img src={dataVisualization} alt="Data Visualization" className="data-image" />
-          </section>
-
-          <section className="project-goals" data-aos="fade-up">
-            <h2>Project Goals</h2>
-            <ul>
-              <li>Improve plant growth</li>
-              <li>Enhance soil quality</li>
-              <li>Promote sustainable practices</li>
-            </ul>
-            <img src={carrots} alt="Growing Carrots" className="carrot-image" />
-          </section>
-        </main>
+        <section className="gallery">
+          <div className="gallery-item">
+            <img src={image1} alt="Gallery 1" />
+            <p>Exploring composting techniques in the classroom.</p>
+          </div>
+          <div className="gallery-item">
+            <img src={image2} alt="Gallery 2" />
+            <p>Students learning about sustainability.</p>
+          </div>
+          <div className="gallery-item">
+            <img src={image3} alt="Gallery 3" />
+            <p>Turning waste into valuable compost.</p>
+          </div>
+        </section>
       </div>
-
-      <footer className="footer" data-aos="fade-in">
-        <p>2024 Room N9 Special Ed Elyse Rynhoud Composter Project.</p>
-      </footer>
     </div>
   );
 }

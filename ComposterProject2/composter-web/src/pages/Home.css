@@ -1,27 +1,24 @@
 /* Home.css */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
-
-body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background: #f9f9f9;
-}
-
 .home-container {
-  color: #333;
-  padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
 .hero-section {
   text-align: center;
   padding: 50px 20px;
-  background: #fff;
+  background: #f0f0f0;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.hero-section h1 {
   margin-bottom: 20px;
 }
 
@@ -29,107 +26,33 @@ body {
   width: 100%;
   max-width: 600px;
   height: auto;
+  border-radius: 10px;
 }
 
 .content {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.sidebar {
-  flex: 1;
-  min-width: 200px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin-right: 20px;
-}
-
-.sidebar h2 {
-  margin-top: 0;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar li {
-  margin: 10px 0;
-}
-
-.main-content {
-  flex: 3;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
 }
 
-.project-details,
-.website-info,
-.project-goals {
-  margin: 20px 0;
+.introduction, .graph-section, .gallery {
+  margin-bottom: 40px;
 }
 
-.composter-images {
+.gallery {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 20px;
 }
 
-.composter-images img,
-.data-image,
-.carrot-image {
+.gallery-item {
+  margin: 20px;
+  text-align: center;
+}
+
+.gallery-item img {
   width: 100%;
   max-width: 300px;
   height: auto;
-  display: block;
-  margin: 10px auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.project-goals ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.project-goals li {
-  padding: 10px;
-  background: #f1f1f1;
-  margin: 5px 0;
-  border-radius: 5px;
-}
-
-button {
-  background-color: #61dafb;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  font-size: 16px;
-  margin: 10px 2px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #21a1f1;
-}
-
-footer {
-  background: linear-gradient(to right, #61dafb, #21a1f1);
-  color: white;
-  text-align: center;
-  padding: 20px;
-  border-top: 5px solid #fff;
-}
-
-@media (min-width: 768px) {
-  .project-details, .website-info, .project-goals {
-    padding: 50px;
-  }
+  margin-bottom: 10px;
 }

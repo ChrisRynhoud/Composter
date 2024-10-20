@@ -17,7 +17,7 @@ function References() {
         </li>
       </ul>
       <h2>Coding References</h2>
-      <ul>
+      <ul className="coding-references">
         <li><strong>Copilot AI:</strong> Assists developers by providing code suggestions and autocompletions to enhance coding efficiency and accuracy.</li>
         <li><strong>Blender:</strong> An open-source 3D creation suite used for modeling, animation, simulation, and rendering.</li>
         <li><strong>Pixabay:</strong> A free image and video database that provides high-quality content for use in various projects.</li>

@@ -73,7 +73,7 @@ const Showcase = () => {
           <img src={item.src} alt={item.name} />
           <div className="info">
             <h2>{item.name}</h2>
-            <p>{item.date}</p> //forceupdate
+            <p>{item.date}</p> 
             <p>{item.tidbit}</p>
           </div>
         </div>

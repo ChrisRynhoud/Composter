@@ -7,6 +7,8 @@ function Contact() {
       <h1>Contact Us</h1>
       <p>If you have any questions or need more information, please reach out to us:</p>
       <div className="contact-info">
+      <h2>Name:</h2>
+        <p>Elyse Rynhoud</p>
         <h2>Email:</h2>
         <p>erynhoud@fusdk12.net</p>
 
