@@ -8,6 +8,14 @@ nav {
   top: 0;
   z-index: 1000;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .top-row, .bottom-row {
+  width: 100%;
+  display: flex;
   justify-content: space-between;
   align-items: center;
 }
@@ -23,7 +31,7 @@ nav .logo-link {
 }
 
 nav .logo-img {
-  height: 280px;  /* Adjusted size */
+  height: 140px;  /* Adjusted size */
   margin-right: 10px;
 }
 
@@ -115,4 +123,18 @@ nav ul li ul li {
 
 nav ul li ul li a {
   color: #333;
+}
+
+.bottom-row ul {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.bottom-row ul li {
+  margin: 0 10px;
+}
+
+.bottom-row ul li a {
+  font-size: 16px;
 }
