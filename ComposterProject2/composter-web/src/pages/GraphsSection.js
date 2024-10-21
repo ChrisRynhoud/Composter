@@ -9,13 +9,17 @@ function GraphsSection({ selectedGraph }) {
   const [plantData, setPlantData] = useState([]);
 
   useEffect(() => {
-    axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/compost-data')
+    const config = { headers: { 'Access-Control-Allow-Origin': '*' } };  // Debug step
+
+    axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/compost-data', config)
       .then(response => setCompostData(aggregateCompostData(response.data)))
       .catch(error => console.error('Error fetching compost data:', error));
-    axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/food-scrap-data')
+    
+    axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/food-scrap-data', config)
       .then(response => setFoodScrapData(aggregateFoodScrapData(response.data)))
       .catch(error => console.error('Error fetching food scrap data:', error));
-    axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/plant-data')
+    
+    axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/plant-data', config)
       .then(response => setPlantData(aggregatePlantData(response.data)))
       .catch(error => console.error('Error fetching plant data:', error));
   }, []);
