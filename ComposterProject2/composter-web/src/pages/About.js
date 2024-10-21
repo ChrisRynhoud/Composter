@@ -16,9 +16,12 @@ function About() {
     const handleScroll = () => {
       if (sidebarRef.current) {
         const scrollY = window.scrollY;
-        const offset = document.querySelector('.hero-section').offsetHeight;
-        if (scrollY > offset) {
-          sidebarRef.current.style.transform = `translateY(${scrollY - offset}px)`; 
+        const offsetTop = document.querySelector('.hero-section').offsetHeight;
+        const offsetBottom = document.querySelector('.footer').offsetTop - window.innerHeight;
+        if (scrollY > offsetTop && scrollY < offsetBottom) {
+          sidebarRef.current.style.transform = `translateY(${scrollY - offsetTop}px)`; 
+        } else if (scrollY >= offsetBottom) {
+          sidebarRef.current.style.transform = `translateY(${offsetBottom - offsetTop}px)`;
         } else {
           sidebarRef.current.style.transform = `translateY(0)`;
         }
@@ -36,7 +39,7 @@ function About() {
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
         window.scrollTo({
-          top: targetElement.offsetTop - 20,
+          top: targetElement.offsetTop - 80,  // Adjust this value for better visibility
           behavior: "smooth",
         });
       }
