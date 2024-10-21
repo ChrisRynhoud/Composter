@@ -10,13 +10,13 @@ function GraphsSection({ selectedGraph }) {
 
   useEffect(() => {
     const config = { headers: { 'Access-Control-Allow-Origin': '*' } };  // Debug step
-
+    
     axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/compost-data', config)
       .then(response => setCompostData(aggregateCompostData(response.data)))
       .catch(error => console.error('Error fetching compost data:', error));
     
     axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/food-scrap-data', config)
-      .then(response => setFoodScrapData(aggregateFoodScrapData(response.data)))
+      .then(response => setFoodScrapData(aggregateAndSortFoodScrapData(response.data)))
       .catch(error => console.error('Error fetching food scrap data:', error));
     
     axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/plant-data', config)
@@ -39,7 +39,7 @@ function GraphsSection({ selectedGraph }) {
     return aggregated;
   };
 
-  const aggregateFoodScrapData = (data) => {
+  const aggregateAndSortFoodScrapData = (data) => {
     const aggregated = data.reduce((acc, curr) => {
       const date = curr.date;
       const foodScrapSaved = Number(curr.foodScrapSaved);
@@ -51,6 +51,7 @@ function GraphsSection({ selectedGraph }) {
       }
       return acc;
     }, []);
+    aggregated.sort((a, b) => new Date(a.date) - new Date(b.date));
     return aggregated;
   };
 
