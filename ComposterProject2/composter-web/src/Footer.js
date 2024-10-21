@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import './Footer.css';
 
 function Footer() {
@@ -6,14 +7,20 @@ function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#website">Website</a></li>
-          <li><a href="#goals">Goals</a></li>
-          <li><a href="#data-submission">Data Submission</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#privacy">Privacy Policy</a></li>
+          <li><NavLink to="/">Home</NavLink></li>
+          <li><NavLink to="/about">About</NavLink></li>
+          <li><NavLink to="/plantdata">Data</NavLink></li>
+          <li><NavLink to="/electric">Composting</NavLink></li>
+          <li><NavLink to="/wormbin">Worm Bin</NavLink></li>
+          <li><NavLink to="/tumbler">Tumbler</NavLink></li>
+          <li><NavLink to="/contact">Contact</NavLink></li>
+          <li><NavLink to="/showcase">Showcase</NavLink></li>
+          <li><NavLink to="/timeline">Timeline</NavLink></li>
+          <li><NavLink to="/compostle">Compostle</NavLink></li>
+          <li><NavLink to="/resources">Resources</NavLink></li>
+          <li><NavLink to="/references">References</NavLink></li>
         </ul>
-        <p>&copy; 2024 Calmposting Composter Project</p>
+        <p>2024 Calmposting Composter Project</p>
       </div>
     </footer>
   );
