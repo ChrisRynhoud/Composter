@@ -18,7 +18,7 @@ import Compostle from './pages/Compostle';
 
 const App = () => {
   return (
-    <>
+    <div className="App">
       <Navigation />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -35,7 +35,7 @@ const App = () => {
         <Route path="/compostle" element={<Compostle />} />
       </Routes>
       <Footer />
-    </>
+    </div>
   );
 };
 
