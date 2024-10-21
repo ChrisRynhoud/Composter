@@ -37,7 +37,8 @@ body {
 }
 
 .sidebar {
-  position: sticky;
+  position: relative;
+  transition: transform 0.3s ease-out;
   top: 20px;
   flex: 1;
   min-width: 200px;
@@ -57,17 +58,23 @@ body {
   padding: 0;
 }
 
-.sidebar li {
+.sidebar ul li {
   margin: 10px 0;
 }
 
-.sidebar a {
-  text-decoration: none;
-  color: #333;
+.sidebar ul li button {
+  width: 100%;
+  padding: 10px;
+  background: #61dafb;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  border-radius: 5px;
 }
 
-.sidebar a:hover {
-  text-decoration: underline;
+.sidebar ul li button:hover {
+  background: #21a1f1;
 }
 
 .main-content {
@@ -110,22 +117,6 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-button {
-  background-color: #61dafb;
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  text-align: center;
-  font-size: 16px;
-  margin: 10px 2px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #21a1f1;
-}
-
 .footer {
   background: #333;
   color: white;
@@ -161,7 +152,11 @@ button:hover {
 }
 
 @media (min-width: 768px) {
-  .project-details, .website-info, .project-goals, .data-submission, .funding {
+  .project-details,
+  .website-info,
+  .project-goals,
+  .data-submission,
+  .funding {
     padding: 50px;
   }
 }
