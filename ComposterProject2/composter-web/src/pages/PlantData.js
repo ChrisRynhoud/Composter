@@ -187,7 +187,7 @@ function PlantData() {
         <button onClick={() => handleImportData('foodScrap')}>Import Food Scrap Data</button>
       </div>
       <div>
-        <button onClick={() => window.location.href = 'https://your-heroku-app-url/download-data'}>Download Data</button>
+        <button onClick={() => window.location.href = 'https://new-backend-app-35dbde982dde.herokuapp.com/download-data'}>Download Data</button>
       </div>
     </div>
   </div>
