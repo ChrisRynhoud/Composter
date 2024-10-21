@@ -42,15 +42,13 @@ body {
   top: 20px;
   flex: 1;
   min-width: 200px;
+  max-height: 100vh;  /* Ensure it doesn't exceed viewport height */
+  overflow: auto;     /* Add scroll if the content overflows */
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   margin-right: 20px;
-}
-
-.sidebar h2 {
-  margin-top: 0;
 }
 
 .sidebar ul {
@@ -76,6 +74,8 @@ body {
 .sidebar ul li button:hover {
   background: #21a1f1;
 }
+
+
 
 .main-content {
   flex: 3;

@@ -16,12 +16,35 @@ function About() {
     const handleScroll = () => {
       if (sidebarRef.current) {
         const scrollY = window.scrollY;
-        sidebarRef.current.style.transform = `translateY(${scrollY * 0.2}px)`;  // Adjust the factor for more/less smoothness
+        const offset = document.querySelector('.hero-section').offsetHeight;
+        if (scrollY > offset) {
+          sidebarRef.current.style.transform = `translateY(${scrollY - offset}px)`; 
+        } else {
+          sidebarRef.current.style.transform = `translateY(0)`;
+        }
       }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleSmoothScroll = (e) => {
+      e.preventDefault();
+      const targetId = e.currentTarget.getAttribute("data-target");
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 20,
+          behavior: "smooth",
+        });
+      }
+    };
+
+    const buttons = document.querySelectorAll('button[data-target]');
+    buttons.forEach(button => button.addEventListener("click", handleSmoothScroll));
+    return () => buttons.forEach(button => button.removeEventListener("click", handleSmoothScroll));
   }, []);
 
   return (
