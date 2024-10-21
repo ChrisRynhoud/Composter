@@ -8,28 +8,18 @@ import image3 from '../assets/images/image3.jpg';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 
 function Home() {
-  const [foodScrapData, setFoodScrapData] = useState([]);
+  const [totalFoodScraps, setTotalFoodScraps] = useState(0);
 
   useEffect(() => {
     axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/food-scrap-data')
-      .then(response => setFoodScrapData(aggregateFoodScrapData(response.data)))
+      .then(response => {
+        const total = response.data.reduce((acc, curr) => acc + Number(curr.foodScrapSaved), 0);
+        setTotalFoodScraps(total);
+      })
       .catch(error => console.error('Error fetching food scrap data:', error));
   }, []);
 
-  const aggregateFoodScrapData = (data) => {
-    const aggregated = data.reduce((acc, curr) => {
-      const date = curr.date;
-      const foodScrapSaved = Number(curr.foodScrapSaved);
-      const index = acc.findIndex(item => item.date === date);
-      if (index === -1) {
-        acc.push({ date, foodScrapSaved });
-      } else {
-        acc[index].foodScrapSaved += foodScrapSaved;
-      }
-      return acc;
-    }, []);
-    return aggregated;
-  };
+  const data = [{ name: 'Total Food Scraps Saved From the Landfill', totalFoodScraps }];
 
   return (
     <div className="home-container">
@@ -38,25 +28,22 @@ function Home() {
         <p className="hero-subtitle">Promoting Sustainable Solutions in Education</p>
         <img src={calmImage} alt="Calm" className="hero-image" />
       </header>
-
       <div className="content">
         <section className="introduction">
           <h2>About Our Project</h2>
           <p>Our project aims to reduce green waste in schools by composting kitchen and cooking scraps right in the classroom.</p>
         </section>
-
         <section className="graph-section">
-          <h2>Total Food Scraps Saved</h2>
-          <BarChart width={800} height={400} data={foodScrapData}>
+          <h2>Total Food Scraps Saved From the Landfill</h2>
+          <BarChart width={800} height={400} data={data}>
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="date" />
+            <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
             <Legend />
-            <Bar dataKey="foodScrapSaved" fill="#82ca9d" />
+            <Bar dataKey="totalFoodScraps" fill="#82ca9d" />
           </BarChart>
         </section>
-
         <section className="gallery">
           <div className="gallery-item">
             <img src={image1} alt="Gallery 1" />
