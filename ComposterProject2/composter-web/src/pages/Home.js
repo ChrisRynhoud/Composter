@@ -13,7 +13,7 @@ function Home() {
   useEffect(() => {
     axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/food-scrap-data')
       .then(response => {
-        const total = response.data.reduce((acc, curr) => acc + Number(curr.data?.foodScrapSaved || 0), 0); // Using optional chaining
+        const total = response.data.reduce((acc, curr) => acc + (curr.data && curr.data.foodScrapSaved ? Number(curr.data.foodScrapSaved) : 0), 0); // Ensuring foodScrapSaved is defined
         console.log('Total Food Scraps:', total);
         setTotalFoodScraps(total);
       })
