@@ -58,35 +58,40 @@ function GraphsSection({ selectedGraph }) {
 
 
   const aggregateAndSortFoodScrapData = (data) => {
-    const aggregated = data.reduce((acc, curr) => {
-      const date = curr.date;
-      const foodScrapSaved = Number(curr.foodScrapSaved);
-      const index = acc.findIndex(item => item.date === date);
-      if (index === -1) {
-        acc.push({ date, foodScrapSaved });
-      } else {
-        acc[index].foodScrapSaved += foodScrapSaved;
-      }
-      return acc;
-    }, []);
-    aggregated.sort((a, b) => new Date(a.date) - new Date(b.date));
-    return aggregated;
-  };
+  const aggregated = data.reduce((acc, curr) => {
+    const date = curr.data.date; // Accessing nested 'data'
+    const foodScrapSaved = Number(curr.data.foodScrapSaved); // Accessing nested 'data'
+    const index = acc.findIndex(item => item.date === date);
+    console.log('Current Date:', date, 'Food Scrap Saved:', foodScrapSaved, 'Index:', index);
+    if (index === -1) {
+      acc.push({ date, foodScrapSaved });
+    } else {
+      acc[index].foodScrapSaved += foodScrapSaved;
+    }
+    return acc;
+  }, []);
+  aggregated.sort((a, b) => new Date(a.date) - new Date(b.date));
+  console.log('Final Aggregated Food Scrap Data:', aggregated);
+  return aggregated;
+};
 
   const aggregatePlantData = (data) => {
-    const aggregated = data.reduce((acc, curr) => {
-      const composter = curr.composter;
-      const height = Number(curr.carrotHeight);
-      const index = acc.findIndex(item => item.composter === composter);
-      if (index === -1) {
-        acc.push({ composter, carrotHeight: height });
-      } else {
-        acc[index].carrotHeight += height;
-      }
-      return acc;
-    }, []);
-    return aggregated;
-  };
+  const aggregated = data.reduce((acc, curr) => {
+    const composter = curr.data.composter; // Accessing nested 'data'
+    const height = Number(curr.data.carrotHeight); // Accessing nested 'data'
+    const index = acc.findIndex(item => item.composter === composter);
+    console.log('Current Composter:', composter, 'Carrot Height:', height, 'Index:', index);
+    if (index === -1) {
+      acc.push({ composter, carrotHeight: height });
+    } else {
+      acc[index].carrotHeight += height;
+    }
+    return acc;
+  }, []);
+  console.log('Final Aggregated Plant Data:', aggregated);
+  return aggregated;
+};
+
 
   return (
   <div className="graphs-section">

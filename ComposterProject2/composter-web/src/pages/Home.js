@@ -13,7 +13,8 @@ function Home() {
   useEffect(() => {
     axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/food-scrap-data')
       .then(response => {
-        const total = response.data.reduce((acc, curr) => acc + Number(curr.foodScrapSaved), 0);
+        const total = response.data.reduce((acc, curr) => acc + Number(curr.data.foodScrapSaved), 0); // Ensure accessing nested 'data'
+        console.log('Total Food Scraps:', total);
         setTotalFoodScraps(total);
       })
       .catch(error => console.error('Error fetching food scrap data:', error));
