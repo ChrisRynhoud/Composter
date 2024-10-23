@@ -59,8 +59,8 @@ function GraphsSection({ selectedGraph }) {
 
   const aggregateAndSortFoodScrapData = (data) => {
   const aggregated = data.reduce((acc, curr) => {
-    const date = curr.data && curr.data.date ? curr.data.date : 'Unknown'; // Ensuring date is defined
-    const foodScrapSaved = curr.data && curr.data.foodScrapSaved ? Number(curr.data.foodScrapSaved) : 0; // Ensuring foodScrapSaved is defined
+    const date = curr.date || 'Unknown'; // Assuming 'date' is directly accessible
+    const foodScrapSaved = Number(curr.foodScrapSaved) || 0; // Assuming 'foodScrapSaved' is directly accessible
     const index = acc.findIndex(item => item.date === date);
     console.log('Current Date:', date, 'Food Scrap Saved:', foodScrapSaved, 'Index:', index);
     if (index === -1) {
@@ -78,10 +78,11 @@ function GraphsSection({ selectedGraph }) {
 
 
 
+
   const aggregatePlantData = (data) => {
   const aggregated = data.reduce((acc, curr) => {
-    const composter = curr.data && curr.data.composter ? curr.data.composter : 'Unknown'; // Ensuring composter is defined
-    const height = curr.data && curr.data.carrotHeight ? Number(curr.data.carrotHeight) : 0; // Ensuring carrotHeight is defined
+    const composter = curr.composter || 'Unknown'; // Assuming 'composter' is directly accessible
+    const height = Number(curr.carrotHeight) || 0; // Assuming 'carrotHeight' is directly accessible
     const index = acc.findIndex(item => item.composter === composter);
     console.log('Current Composter:', composter, 'Carrot Height:', height, 'Index:', index);
     if (index === -1) {
