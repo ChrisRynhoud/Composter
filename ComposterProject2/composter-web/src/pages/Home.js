@@ -10,15 +10,16 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'rec
 function Home() {
   const [totalFoodScraps, setTotalFoodScraps] = useState(0);
 
-  useEffect(() => {
-    axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/food-scrap-data')
-      .then(response => {
-        const total = response.data.reduce((acc, curr) => acc + Number(curr.data.foodScrapSaved), 0); // Ensure accessing nested 'data'
-        console.log('Total Food Scraps:', total);
-        setTotalFoodScraps(total);
-      })
-      .catch(error => console.error('Error fetching food scrap data:', error));
-  }, []);
+useEffect(() => {
+  axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/food-scrap-data')
+    .then(response => {
+      const total = response.data.reduce((acc, curr) => acc + Number(curr.data?.foodScrapSaved || 0), 0); // Using optional chaining
+      console.log('Total Food Scraps:', total);
+      setTotalFoodScraps(total);
+    })
+    .catch(error => console.error('Error fetching food scrap data:', error));
+}, []);
+
 
   const data = [{ name: 'Total Food Scraps Saved From the Landfill', totalFoodScraps }];
 

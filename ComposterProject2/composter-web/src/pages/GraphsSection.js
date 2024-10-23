@@ -59,8 +59,8 @@ function GraphsSection({ selectedGraph }) {
 
   const aggregateAndSortFoodScrapData = (data) => {
   const aggregated = data.reduce((acc, curr) => {
-    const date = curr.data.date; // Accessing nested 'data'
-    const foodScrapSaved = Number(curr.data.foodScrapSaved); // Accessing nested 'data'
+    const date = curr.data?.date; // Optional chaining
+    const foodScrapSaved = Number(curr.data?.foodScrapSaved) || 0; // Optional chaining
     const index = acc.findIndex(item => item.date === date);
     console.log('Current Date:', date, 'Food Scrap Saved:', foodScrapSaved, 'Index:', index);
     if (index === -1) {
@@ -75,10 +75,11 @@ function GraphsSection({ selectedGraph }) {
   return aggregated;
 };
 
+
   const aggregatePlantData = (data) => {
   const aggregated = data.reduce((acc, curr) => {
-    const composter = curr.data.composter; // Accessing nested 'data'
-    const height = Number(curr.data.carrotHeight); // Accessing nested 'data'
+    const composter = curr.data?.composter; // Optional chaining
+    const height = Number(curr.data?.carrotHeight) || 0; // Optional chaining
     const index = acc.findIndex(item => item.composter === composter);
     console.log('Current Composter:', composter, 'Carrot Height:', height, 'Index:', index);
     if (index === -1) {
@@ -91,6 +92,7 @@ function GraphsSection({ selectedGraph }) {
   console.log('Final Aggregated Plant Data:', aggregated);
   return aggregated;
 };
+
 
 
   return (
