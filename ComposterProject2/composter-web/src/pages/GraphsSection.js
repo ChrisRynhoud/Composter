@@ -12,11 +12,12 @@ function GraphsSection({ selectedGraph }) {
   const config = { headers: { 'Access-Control-Allow-Origin': '*' } };
   
   axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/compost-data', config)
-    .then(response => {
-      console.log('Compost Data:', response.data);
-      setCompostData(aggregateCompostData(response.data));
-    })
-    .catch(error => console.error('Error fetching compost data:', error));
+  .then(response => {
+    console.log('Raw Compost Data:', response.data);
+    setCompostData(aggregateCompostData(response.data));
+  })
+  .catch(error => console.error('Error fetching compost data:', error));
+
     
   axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/food-scrap-data', config)
     .then(response => {
@@ -39,6 +40,7 @@ function GraphsSection({ selectedGraph }) {
     const composter = curr.composter;
     const produced = Number(curr.compostProduced);
     const index = acc.findIndex(item => item.composter === composter);
+    console.log('Current Composter:', composter, 'Produced:', produced, 'Index:', index);
     if (index === -1) {
       acc.push({ composter, compostProduced: produced });
     } else {
@@ -46,9 +48,10 @@ function GraphsSection({ selectedGraph }) {
     }
     return acc;
   }, []);
-  console.log('Aggregated Compost Data:', aggregated);
+  console.log('Final Aggregated Compost Data:', aggregated);
   return aggregated;
 };
+
 // Similarly for other aggregation functions
 
 
