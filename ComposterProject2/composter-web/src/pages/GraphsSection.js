@@ -9,35 +9,48 @@ function GraphsSection({ selectedGraph }) {
   const [plantData, setPlantData] = useState([]);
 
   useEffect(() => {
-    const config = { headers: { 'Access-Control-Allow-Origin': '*' } };  // Debug step
+  const config = { headers: { 'Access-Control-Allow-Origin': '*' } };
+  
+  axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/compost-data', config)
+    .then(response => {
+      console.log('Compost Data:', response.data);
+      setCompostData(aggregateCompostData(response.data));
+    })
+    .catch(error => console.error('Error fetching compost data:', error));
     
-    axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/compost-data', config)
-      .then(response => setCompostData(aggregateCompostData(response.data)))
-      .catch(error => console.error('Error fetching compost data:', error));
+  axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/food-scrap-data', config)
+    .then(response => {
+      console.log('Food Scrap Data:', response.data);
+      setFoodScrapData(aggregateAndSortFoodScrapData(response.data));
+    })
+    .catch(error => console.error('Error fetching food scrap data:', error));
     
-    axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/food-scrap-data', config)
-      .then(response => setFoodScrapData(aggregateAndSortFoodScrapData(response.data)))
-      .catch(error => console.error('Error fetching food scrap data:', error));
-    
-    axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/plant-data', config)
-      .then(response => setPlantData(aggregatePlantData(response.data)))
-      .catch(error => console.error('Error fetching plant data:', error));
-  }, []);
+  axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/plant-data', config)
+    .then(response => {
+      console.log('Plant Data:', response.data);
+      setPlantData(aggregatePlantData(response.data));
+    })
+    .catch(error => console.error('Error fetching plant data:', error));
+}, []);
+
 
   const aggregateCompostData = (data) => {
-    const aggregated = data.reduce((acc, curr) => {
-      const composter = curr.composter;
-      const produced = Number(curr.compostProduced);
-      const index = acc.findIndex(item => item.composter === composter);
-      if (index === -1) {
-        acc.push({ composter, compostProduced: produced });
-      } else {
-        acc[index].compostProduced += produced;
-      }
-      return acc;
-    }, []);
-    return aggregated;
-  };
+  const aggregated = data.reduce((acc, curr) => {
+    const composter = curr.composter;
+    const produced = Number(curr.compostProduced);
+    const index = acc.findIndex(item => item.composter === composter);
+    if (index === -1) {
+      acc.push({ composter, compostProduced: produced });
+    } else {
+      acc[index].compostProduced += produced;
+    }
+    return acc;
+  }, []);
+  console.log('Aggregated Compost Data:', aggregated);
+  return aggregated;
+};
+// Similarly for other aggregation functions
+
 
   const aggregateAndSortFoodScrapData = (data) => {
     const aggregated = data.reduce((acc, curr) => {
@@ -71,8 +84,10 @@ function GraphsSection({ selectedGraph }) {
   };
 
   return (
-    <div className="graphs-section">
-      {selectedGraph === 'Compost Production' && (
+  <div className="graphs-section">
+    {selectedGraph === 'Compost Production' && (
+      <>
+        {console.log('Rendering Compost Data:', compostData)}
         <BarChart width={800} height={400} data={compostData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="composter" />
@@ -81,8 +96,11 @@ function GraphsSection({ selectedGraph }) {
           <Legend />
           <Bar dataKey="compostProduced" fill="#82ca9d" />
         </BarChart>
-      )}
-      {selectedGraph === 'Food Scraps Saved' && (
+      </>
+    )}
+    {selectedGraph === 'Food Scraps Saved' && (
+      <>
+        {console.log('Rendering Food Scrap Data:', foodScrapData)}
         <LineChart width={800} height={400} data={foodScrapData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="date" />
@@ -91,8 +109,11 @@ function GraphsSection({ selectedGraph }) {
           <Legend />
           <Line type="monotone" dataKey="foodScrapSaved" stroke="#8884d8" />
         </LineChart>
-      )}
-      {selectedGraph === 'Average Carrot Height' && (
+      </>
+    )}
+    {selectedGraph === 'Average Carrot Height' && (
+      <>
+        {console.log('Rendering Plant Data:', plantData)}
         <BarChart width={800} height={400} data={plantData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="composter" />
@@ -101,9 +122,11 @@ function GraphsSection({ selectedGraph }) {
           <Legend />
           <Bar dataKey="carrotHeight" fill="#82ca9d" />
         </BarChart>
-      )}
-    </div>
-  );
+      </>
+    )}
+  </div>
+);
+
 }
 
 export default GraphsSection;
