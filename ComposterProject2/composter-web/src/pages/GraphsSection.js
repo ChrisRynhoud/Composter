@@ -37,8 +37,8 @@ function GraphsSection({ selectedGraph }) {
 
   const aggregateCompostData = (data) => {
   const aggregated = data.reduce((acc, curr) => {
-    const composter = curr.composter;
-    const produced = Number(curr.compostProduced);
+    const composter = curr.composter || 'Unknown';
+    const produced = Number(curr.compostProduced) || 0;
     const index = acc.findIndex(item => item.composter === composter);
     console.log('Current Composter:', composter, 'Produced:', produced, 'Index:', index);
     if (index === -1) {
@@ -51,6 +51,8 @@ function GraphsSection({ selectedGraph }) {
   console.log('Final Aggregated Compost Data:', aggregated);
   return aggregated;
 };
+
+
 
 // Similarly for other aggregation functions
 
