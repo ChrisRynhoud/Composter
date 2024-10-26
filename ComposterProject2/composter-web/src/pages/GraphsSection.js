@@ -17,7 +17,6 @@ function GraphsSection({ selectedGraph }) {
 
   useEffect(() => {
     const config = { headers: { 'Access-Control-Allow-Origin': '*' } };
-
     axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/compost-data', config)
       .then(response => {
         console.log('Raw Compost Data:', response.data);
@@ -44,52 +43,45 @@ function GraphsSection({ selectedGraph }) {
     const aggregated = data.reduce((acc, curr) => {
       const composter = curr.composter || 'Unknown';
       const produced = Number(curr.compostProduced) || 0;
-      const index = acc.findIndex(item => item.composter === composter);
-      console.log('Current Composter:', composter, 'Produced:', produced, 'Index:', index);
-      if (index === -1) {
-        acc.push({ composter: composterNames[composter], compostProduced: produced });
-      } else {
-        acc[index].compostProduced += produced;
+      if (!acc[composter]) {
+        acc[composter] = { composter: composterNames[composter], compostProduced: 0 };
       }
+      acc[composter].compostProduced += produced;
       return acc;
-    }, []);
-    console.log('Final Aggregated Compost Data:', aggregated);
-    return aggregated;
+    }, {});
+    return Object.values(aggregated);
   };
 
   const aggregateAndSortFoodScrapData = (data) => {
     const aggregated = data.reduce((acc, curr) => {
       const date = curr.date || 'Unknown';
       const foodScrapSaved = Number(curr.foodScrapSaved) || 0;
-      const index = acc.findIndex(item => item.date === date);
-      console.log('Current Date:', date, 'Food Scrap Saved:', foodScrapSaved, 'Index:', index);
-      if (index === -1) {
-        acc.push({ date, foodScrapSaved });
-      } else {
-        acc[index].foodScrapSaved += foodScrapSaved;
+      if (!acc[date]) {
+        acc[date] = { date, foodScrapSaved: 0 };
       }
+      acc[date].foodScrapSaved += foodScrapSaved;
       return acc;
-    }, []);
-    aggregated.sort((a, b) => new Date(a.date) - new Date(b.date));
-    console.log('Final Aggregated Food Scrap Data:', aggregated);
-    return aggregated;
+    }, {});
+    return Object.values(aggregated).sort((a, b) => new Date(a.date) - new Date(b.date));
   };
 
   const aggregatePlantData = (data) => {
     const aggregated = data.reduce((acc, curr) => {
       const composter = curr.composter || 'Unknown';
       const height = Number(curr.carrotHeight) || 0;
-      const index = acc.findIndex(item => item.composter === composter);
-      console.log('Current Composter:', composter, 'Carrot Height:', height, 'Index:', index);
-      if (index === -1) {
-        acc.push({ composter: composterNames[composter], carrotHeight: height });
-      } else {
-        acc[index].carrotHeight += height;
+      if (!acc[composter]) {
+        acc[composter] = { composter: composterNames[composter], totalHeight: 0, count: 0 };
       }
+      acc[composter].totalHeight += height;
+      acc[composter].count += 1;
       return acc;
-    }, []);
-    console.log('Final Aggregated Plant Data:', aggregated);
-    return aggregated;
+    }, {});
+
+    const averageHeightData = Object.values(aggregated).map(item => ({
+      composter: item.composter,
+      carrotHeight: item.totalHeight / item.count
+    }));
+    return averageHeightData;
   };
 
   return (
