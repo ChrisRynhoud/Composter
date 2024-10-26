@@ -1,7 +1,10 @@
-/* Compostle.css */
 .compostle-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 20px;
+  padding-bottom: 20px;
 }
 
 .game-info {
@@ -11,41 +14,33 @@
   font-size: 18px;
 }
 
-.game-board {
+.bin-images {
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.item {
-  width: 150px;
-  height: 150px;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  cursor: grab;
-}
-
-.bins {
-  display: flex;
-  justify-content: space-around;
+  gap: 20px; /* Adjust spacing between bins if needed */
   width: 100%;
   max-width: 600px;
 }
 
 .bin {
-  width: 200px;
-  height: 300px;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f0f0f0;
-  margin: 0 10px;
-  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 10px;
   cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+}
+
+.correct {
+  border: 4px solid limegreen;
+}
+
+.incorrect {
+  border: 4px solid red;
+}
+
+.highlight-correct {
+  border: 4px solid limegreen;
 }
 
 .bin img {
@@ -62,8 +57,6 @@
   background-color: #f8d7da;
 }
 
-@media (min-width: 768px) {
-  .game-board {
-    flex-direction: row;
-  }
+.recycling-bin {
+  background-color: #d1ecf1;
 }

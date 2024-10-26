@@ -17,6 +17,31 @@ body {
   max-width: 1200px;
 }
 
+.dropdown-button-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.data-submission-menu {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 10px 20px;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+
+
 .graphs-section {
   margin-bottom: 20px;
 }

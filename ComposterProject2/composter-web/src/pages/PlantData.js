@@ -61,6 +61,13 @@ function PlantData() {
       .then(response => alert(response.data))
       .catch(error => console.error('Error:', error));
   };
+
+  const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+
+  const toggleDropdown = () => {
+    setIsDropdownVisible(!isDropdownVisible);
+  };
+
   const renderForm = () => {
     switch (submissionType) {
       case 'Carrot Height':
@@ -83,10 +90,10 @@ function PlantData() {
                 value={plantData.composter}
                 onChange={handlePlantChange}
               >
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
+                <option value="1">Electric Composter (Reencle)</option>
+                <option value="2">Worm Bin</option>
+                <option value="3">Tumbler</option>
+                <option value="4">Control</option>
               </select>
             </label>
             <label>
@@ -151,21 +158,23 @@ function PlantData() {
         <option value="Food Scraps Saved">Food Scraps Saved</option>
         <option value="Average Carrot Height">Average Carrot Height</option>
       </select>
-      <button onClick={() => setShowForm(!showForm)}>+</button>
+      <div className="dropdown-button-wrapper">
+        <button onClick={toggleDropdown}>+</button>
+        {isDropdownVisible && (
+          <div className={`data-submission-menu ${isDropdownVisible ? '' : 'hidden'}`}>
+            <button onClick={() => setIsDropdownVisible(false)}>Back</button>
+            <select value={submissionType} onChange={(e) => setSubmissionType(e.target.value)}>
+              <option value="">Select Submission Type</option>
+              <option value="Carrot Height">Carrot Height</option>
+              <option value="Compost Produced">Compost Produced</option>
+              <option value="Food Scrap Saved">Food Scrap Saved</option>
+            </select>
+            {submissionType && renderForm()}
+          </div>
+        )}
+      </div>
     </div>
     <GraphsSection selectedGraph={selectedGraph} />
-    {showForm && (
-      <div className="data-submission">
-        <button onClick={() => setShowForm(false)}>Back</button>
-        <select value={submissionType} onChange={(e) => setSubmissionType(e.target.value)}>
-          <option value="">Select Submission Type</option>
-          <option value="Carrot Height">Carrot Height</option>
-          <option value="Compost Produced">Compost Produced</option>
-          <option value="Food Scrap Saved">Food Scrap Saved</option>
-        </select>
-        {submissionType && renderForm()}
-      </div>
-    )}
     <div className="data-reset-import">
       <h2>Data Management</h2>
       <div>
@@ -192,6 +201,10 @@ function PlantData() {
     </div>
   </div>
 );
+
+
+
+
 
 }
 

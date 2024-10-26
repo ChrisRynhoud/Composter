@@ -28,6 +28,7 @@ function References() {
         <li><strong>Sublime:</strong> A sophisticated text editor used for code, markup, and prose, known for its speed and user-friendly interface.</li>
         <li><strong>Amazon:</strong> Provides cloud computing services (AWS) and various developer tools for building, deploying, and managing applications.</li>
         <li><strong>ezgif.com:</strong> An online tool for creating, resizing, and editing GIFs, making multimedia projects more dynamic.</li>
+        <li><strong>online-convert.com:</strong> A free image conversion tool used to convert images to into different file types.</li>
       </ul>
     </div>
   );
