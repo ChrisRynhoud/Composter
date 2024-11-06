@@ -1,19 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.16c23be8.css",
-    "main.js": "/static/js/main.d2ee13f5.js",
+    "main.css": "/static/css/main.1b381809.css",
+    "main.js": "/static/js/main.0c361837.js",
     "static/js/453.491f8a9b.chunk.js": "/static/js/453.491f8a9b.chunk.js",
+    "static/media/wormsarrived.jpg": "/static/media/wormsarrived.6823faed08bbf31bbad7.jpg",
+    "static/media/wormmixing.jpg": "/static/media/wormmixing.b67bd08c7249cc8d2095.jpg",
+    "static/media/setUpGardening.jpg": "/static/media/setUpGardening.db5285f19bf0a62a27b9.jpg",
+    "static/media/AllComposters.jpg": "/static/media/AllComposters.2c79594bf7f78d63dbe5.jpg",
+    "static/media/hero-image.jpg": "/static/media/hero-image.2c79594bf7f78d63dbe5.jpg",
+    "static/media/wormbin.jpg": "/static/media/wormbin.f9cdf4db7093d76f77b8.jpg",
+    "static/media/tumbler.jpg": "/static/media/tumbler.638209e6d9b2846375f0.jpg",
+    "static/media/composter1.jpg": "/static/media/composter1.7c4aae62e6b2a59d90c3.jpg",
+    "static/media/reencle.jpg": "/static/media/reencle.7c4aae62e6b2a59d90c3.jpg",
+    "static/media/composter2.jpg": "/static/media/composter2.f374db20af9985bae1db.jpg",
+    "static/media/comingtogether.jpg": "/static/media/comingtogether.241609ee9b6be33d0df4.jpg",
+    "static/media/composter3.jpg": "/static/media/composter3.241609ee9b6be33d0df4.jpg",
     "static/media/logo.gif": "/static/media/logo.82cdb5eafe7fe1a35c85.gif",
-    "static/media/composter1.jpg": "/static/media/composter1.491f3bf4e885a7a04256.jpg",
-    "static/media/composter2.jpg": "/static/media/composter2.9a6fa325d8a9ccb62baf.jpg",
-    "static/media/wormbin.jpg": "/static/media/wormbin.745c24d34ab4ce8c06a0.jpg",
-    "static/media/composter3.jpg": "/static/media/composter3.f2e543180522feea0496.jpg",
     "static/media/compostbin.jpg": "/static/media/compostbin.261a2d3a776a8004e709.jpg",
-    "static/media/hero-image.jpg": "/static/media/hero-image.4f0b7dde7d42ded2439d.jpg",
     "static/media/image3.jpg": "/static/media/image3.6f9f9ece6662291cecc9.jpg",
     "static/media/resource2.jpg": "/static/media/resource2.d1d19190c6a79e61e8b5.jpg",
-    "static/media/tumbler.jpg": "/static/media/tumbler.96ac20f1ac1c2dc10c16.jpg",
-    "static/media/reencle.jpg": "/static/media/reencle.9f9edda7022d9e9c37bb.jpg",
     "static/media/trashbin.jpg": "/static/media/trashbin.115f9d268e8a3f925502.jpg",
     "static/media/carrots.jpg": "/static/media/carrots.a70122583a978d6230ed.jpg",
     "static/media/resource3.jpg": "/static/media/resource3.d879b8a0594fb604b648.jpg",
@@ -28,12 +33,12 @@
     "static/media/funding.jpg": "/static/media/funding.d0067fc180b37519b957.jpg",
     "static/media/calm.jpg": "/static/media/calm.f0c0a28dd029f15aab62.jpg",
     "index.html": "/index.html",
-    "main.16c23be8.css.map": "/static/css/main.16c23be8.css.map",
-    "main.d2ee13f5.js.map": "/static/js/main.d2ee13f5.js.map",
+    "main.1b381809.css.map": "/static/css/main.1b381809.css.map",
+    "main.0c361837.js.map": "/static/js/main.0c361837.js.map",
     "453.491f8a9b.chunk.js.map": "/static/js/453.491f8a9b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.16c23be8.css",
-    "static/js/main.d2ee13f5.js"
+    "static/css/main.1b381809.css",
+    "static/js/main.0c361837.js"
   ]
 }
