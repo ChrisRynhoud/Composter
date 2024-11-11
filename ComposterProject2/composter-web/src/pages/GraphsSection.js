@@ -92,7 +92,7 @@ function GraphsSection({ selectedGraph }) {
           <BarChart width={800} height={400} data={compostData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="composter" />
-            <YAxis />
+            <YAxis label={{ value: 'lbs', angle: -90, position: 'insideLeft' }} />
             <Tooltip />
             <Legend />
             <Bar dataKey="compostProduced" fill="#82ca9d" />
@@ -105,7 +105,7 @@ function GraphsSection({ selectedGraph }) {
           <LineChart width={800} height={400} data={foodScrapData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="date" />
-            <YAxis />
+            <YAxis label={{ value: 'lbs', angle: -90, position: 'insideLeft' }} />
             <Tooltip />
             <Legend />
             <Line type="monotone" dataKey="foodScrapSaved" stroke="#8884d8" />
@@ -118,7 +118,7 @@ function GraphsSection({ selectedGraph }) {
           <BarChart width={800} height={400} data={plantData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="composter" />
-            <YAxis />
+            <YAxis label={{ value: 'inches', angle: -90, position: 'insideLeft' }} />
             <Tooltip />
             <Legend />
             <Bar dataKey="carrotHeight" fill="#82ca9d" />

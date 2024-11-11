@@ -40,7 +40,7 @@ function Home() {
     <BarChart width={800} height={400} data={data}>
       <CartesianGrid strokeDasharray="3 3" />
       <XAxis dataKey="name" />
-      <YAxis />
+      <YAxis label={{ value: 'lbs', angle: -90, position: 'insideLeft' }} />
       <Tooltip />
       <Legend />
       <Bar dataKey="totalFoodScraps" fill="#82ca9d" />

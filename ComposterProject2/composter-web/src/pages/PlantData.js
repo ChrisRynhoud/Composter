@@ -74,7 +74,7 @@ function PlantData() {
         return (
           <form onSubmit={handlePlantSubmit}>
             <label>
-              Carrot Height:
+              Carrot Height (inches):
               <input
                 type="number"
                 name="carrotHeight"
@@ -121,7 +121,7 @@ function PlantData() {
               </select>
             </label>
             <label>
-              How Much Compost Produced:
+              How Much Compost Produced (lbs):
               <input type="number" name="compostProduced" value={composterData.compostProduced} onChange={handleComposterChange} />
             </label>
             <label>
@@ -135,7 +135,7 @@ function PlantData() {
         return (
           <form onSubmit={handleFoodScrapSubmit}>
             <label>
-              How Much Food Scrap Saved:
+              How Much Food Scrap Saved (lbs):
               <input type="number" name="foodScrapSaved" value={foodScrapData.foodScrapSaved} onChange={handleFoodScrapChange} />
             </label>
             <label>
