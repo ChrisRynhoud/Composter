@@ -15,29 +15,31 @@ function GraphsSection({ selectedGraph }) {
     4: "Control" // Only for plantData
   };
 
-  useEffect(() => {
-    const config = { headers: { 'Access-Control-Allow-Origin': '*' } };
-    axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/compost-data', config)
-      .then(response => {
-        console.log('Raw Compost Data:', response.data);
-        setCompostData(aggregateCompostData(response.data));
-      })
-      .catch(error => console.error('Error fetching compost data:', error));
+useEffect(() => {
+  fetch('/compost_data.json')
+    .then(response => response.json())
+    .then(data => {
+      console.log('Raw Compost Data:', data);
+      setCompostData(aggregateCompostData(data));
+    })
+    .catch(error => console.error('Error fetching compost data:', error));
 
-    axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/food-scrap-data', config)
-      .then(response => {
-        console.log('Food Scrap Data:', response.data);
-        setFoodScrapData(aggregateAndSortFoodScrapData(response.data));
-      })
-      .catch(error => console.error('Error fetching food scrap data:', error));
+  fetch('/food_scrap_data.json')
+    .then(response => response.json())
+    .then(data => {
+      console.log('Food Scrap Data:', data);
+      setFoodScrapData(aggregateAndSortFoodScrapData(data));
+    })
+    .catch(error => console.error('Error fetching food scrap data:', error));
 
-    axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/plant-data', config)
-      .then(response => {
-        console.log('Plant Data:', response.data);
-        setPlantData(aggregatePlantData(response.data));
-      })
-      .catch(error => console.error('Error fetching plant data:', error));
-  }, []);
+  fetch('/plant_data.json')
+    .then(response => response.json())
+    .then(data => {
+      console.log('Plant Data:', data);
+      setPlantData(aggregatePlantData(data));
+    })
+    .catch(error => console.error('Error fetching plant data:', error));
+}, []);
 
   const aggregateCompostData = (data) => {
     const aggregated = data.reduce((acc, curr) => {

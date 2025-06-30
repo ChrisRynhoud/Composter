@@ -11,12 +11,13 @@ function Home() {
   const [totalFoodScraps, setTotalFoodScraps] = useState(0);
 
   useEffect(() => {
-    axios.get('https://new-backend-app-35dbde982dde.herokuapp.com/food-scrap-data')
-      .then(response => {
-        const total = response.data.reduce((acc, curr) => acc + (curr.foodScrapSaved ? Number(curr.foodScrapSaved) : 0), 0); // Direct access like GraphsSection.js
-        console.log('Total Food Scraps:', total);
-        setTotalFoodScraps(total);
-      })
+    fetch('/food_scrap_data.json')
+      .then(response => response.json())
+    .then(data => {
+      const total = data.reduce((acc, curr) => acc + (curr.foodScrapSaved ? Number(curr.foodScrapSaved) : 0), 0);
+      console.log('Total Food Scraps:', total);
+      setTotalFoodScraps(total);
+    })
       .catch(error => console.error('Error fetching food scrap data:', error));
   }, []);
 

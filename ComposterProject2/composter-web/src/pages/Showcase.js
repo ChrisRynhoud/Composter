@@ -7,31 +7,31 @@ import placeholder2 from '../assets/images/AllComposters.jpg';
 import placeholder3 from '../assets/images/wormsarrived.jpg';
 import placeholder4 from '../assets/images/wormmixing.jpg';
 import placeholder5 from '../assets/images/comingtogether.jpg';
-import placeholder6 from '../assets/images/placeholder.jpg';
-import placeholder7 from '../assets/images/placeholder.jpg';
-import placeholder8 from '../assets/images/placeholder.jpg';
-import placeholder9 from '../assets/images/placeholder.jpg';
-import placeholder10 from '../assets/images/placeholder.jpg';
-import placeholder11 from '../assets/images/placeholder.jpg';
-import placeholder12 from '../assets/images/placeholder.jpg';
-import placeholder13 from '../assets/images/placeholder.jpg';
-import placeholder14 from '../assets/images/placeholder.jpg';
-import placeholder15 from '../assets/images/placeholder.jpg';
-import placeholder16 from '../assets/images/placeholder.jpg';
-import placeholder17 from '../assets/images/placeholder.jpg';
-import placeholder18 from '../assets/images/placeholder.jpg';
-import placeholder19 from '../assets/images/placeholder.jpg';
-import placeholder20 from '../assets/images/placeholder.jpg';
-import placeholder21 from '../assets/images/placeholder.jpg';
-import placeholder22 from '../assets/images/placeholder.jpg';
-import placeholder23 from '../assets/images/placeholder.jpg';
-import placeholder24 from '../assets/images/placeholder.jpg';
-import placeholder25 from '../assets/images/placeholder.jpg';
-import placeholder26 from '../assets/images/placeholder.jpg';
-import placeholder27 from '../assets/images/placeholder.jpg';
-import placeholder28 from '../assets/images/placeholder.jpg';
-import placeholder29 from '../assets/images/placeholder.jpg';
-import placeholder30 from '../assets/images/placeholder.jpg';
+import placeholder6 from '../assets/images/1.jpg';
+import placeholder7 from '../assets/images/2.jpg';
+import placeholder8 from '../assets/images/3.jpg';
+import placeholder9 from '../assets/images/4.jpg';
+import placeholder10 from '../assets/images/5.jpg';
+import placeholder11 from '../assets/images/6.jpg';
+import placeholder12 from '../assets/images/7.jpg';
+import placeholder13 from '../assets/images/8.jpg';
+import placeholder14 from '../assets/images/9.jpg';
+import placeholder15 from '../assets/images/10.jpg';
+import placeholder16 from '../assets/images/11.jpg';
+import placeholder17 from '../assets/images/12.jpg';
+import placeholder18 from '../assets/images/13.jpg';
+import placeholder19 from '../assets/images/14.jpg';
+import placeholder20 from '../assets/images/15.jpg';
+import placeholder21 from '../assets/images/16.jpg';
+import placeholder22 from '../assets/images/17.jpg';
+import placeholder23 from '../assets/images/18.jpg';
+import placeholder24 from '../assets/images/19.jpg';
+import placeholder25 from '../assets/images/20.jpg';
+import placeholder26 from '../assets/images/21.jpg';
+import placeholder27 from '../assets/images/22.jpg';
+import placeholder28 from '../assets/images/23.jpg';
+import placeholder29 from '../assets/images/24.jpg';
+import placeholder30 from '../assets/images/25.jpg';
 
 const Showcase = () => {
   const [modalVisible, setModalVisible] = useState(false);
@@ -42,31 +42,31 @@ const Showcase = () => {
     { src: placeholder3, name: 'Ooh Worms!', date: '11/5/2024', tidbit: 'A bunch of our worms showed up!' },
     { src: placeholder4, name: 'Stir it Up!', date: '11/5/2024', tidbit: 'Ms. Elyse is showing us how to stir up some worm paydirt!' },
     { src: placeholder5, name: 'Things Are Really Coming Together!', date: '11/5/2024', tidbit: 'Wow, everything is really shaping up here!' },
-    { src: placeholder6, name: 'Photo 6', date: '06/01/2021', tidbit: 'A vibrant sunset.' },
-    { src: placeholder7, name: 'Photo 7', date: '07/01/2021', tidbit: 'A colorful market.' },
-    { src: placeholder8, name: 'Photo 8', date: '08/01/2021', tidbit: 'A peaceful lake.' },
-    { src: placeholder9, name: 'Photo 9', date: '09/01/2021', tidbit: 'A historic landmark.' },
-    { src: placeholder10, name: 'Photo 10', date: '10/01/2021', tidbit: 'A lively festival.' },
-    { src: placeholder11, name: 'Photo 11', date: '11/01/2021', tidbit: 'A majestic waterfall.' },
-    { src: placeholder12, name: 'Photo 12', date: '12/01/2021', tidbit: 'A cozy village.' },
-    { src: placeholder13, name: 'Photo 13', date: '13/01/2021', tidbit: 'A mysterious cave.' },
-    { src: placeholder14, name: 'Photo 14', date: '14/01/2021', tidbit: 'A thriving city.' },
-    { src: placeholder15, name: 'Photo 15', date: '15/01/2021', tidbit: 'A charming street.' },
-    { src: placeholder16, name: 'Photo 16', date: '16/01/2021', tidbit: 'A vibrant garden.' },
-    { src: placeholder17, name: 'Photo 17', date: '17/01/2021', tidbit: 'A bustling port.' },
-    { src: placeholder18, name: 'Photo 18', date: '18/01/2021', tidbit: 'A serene river.' },
-    { src: placeholder19, name: 'Photo 19', date: '19/01/2021', tidbit: 'A picturesque valley.' },
-    { src: placeholder20, name: 'Photo 20', date: '20/01/2021', tidbit: 'A grand palace.' },
-    { src: placeholder21, name: 'Photo 21', date: '21/01/2021', tidbit: 'A wild safari.' },
-    { src: placeholder22, name: 'Photo 22', date: '22/01/2021', tidbit: 'A quiet park.' },
-    { src: placeholder23, name: 'Photo 23', date: '23/01/2021', tidbit: 'A towering skyscraper.' },
-    { src: placeholder24, name: 'Photo 24', date: '24/01/2021', tidbit: 'A rustic farm.' },
-    { src: placeholder25, name: 'Photo 25', date: '25/01/2021', tidbit: 'A golden desert.' },
-    { src: placeholder26, name: 'Photo 26', date: '26/01/2021', tidbit: 'A mysterious island.' },
-    { src: placeholder27, name: 'Photo 27', date: '27/01/2021', tidbit: 'A hidden waterfall.' },
-    { src: placeholder28, name: 'Photo 28', date: '28/01/2021', tidbit: 'A lively street market.' },
-    { src: placeholder29, name: 'Photo 29', date: '29/01/2021', tidbit: 'A majestic castle.' },
-    { src: placeholder30, name: 'Photo 30', date: '30/01/2021', tidbit: 'A peaceful meadow.' },
+    { src: placeholder6, name: 'Bugs Are Attacking!', date: '04/17/2025', tidbit: 'A bunch of bugs are eating our plants!' },
+    { src: placeholder7, name: 'Our Planter Boxes Are Beautiful!', date: '05/29/2025', tidbit: 'Look at all the plants we are growing!' },
+    { src: placeholder8, name: 'Our Succulents Are Healthy!', date: '11/15/2024', tidbit: 'Look at how healthy our succulents are.' },
+    { src: placeholder9, name: 'Flowers Are Blooming!', date: '03/12/2025', tidbit: 'Look at all of our flowers blooming.' },
+    { src: placeholder10, name: 'Plenty Of Rain!', date: '12/16/2024', tidbit: 'All of our plants are getting tons of rain.' },
+    { src: placeholder11, name: 'Lush Garden!', date: '03/12/2025', tidbit: 'Look at how lush and full our garden is!' },
+    { src: placeholder12, name: 'Cauliflower Is Coming Along!', date: '03/12/2025', tidbit: 'Our cauliflower is looking healthier than ever.' },
+    { src: placeholder13, name: 'Pistachio Shells!', date: '04/17/2025', tidbit: 'Pistachio shells are great for making soil healthy!' },
+    { src: placeholder14, name: 'The Mountains!', date: '01/06/2025', tidbit: 'Look how close our garden is to our beautiful mountains!' },
+    { src: placeholder15, name: 'Pink Flowers Are Blooming!', date: '01/06/2025', tidbit: 'Look at these beautiful pink flowers that are blooming.' },
+    { src: placeholder16, name: 'Beautiful Red Plant!', date: '01/06/2025', tidbit: 'Look at the beautiful red stem of this plant.' },
+    { src: placeholder17, name: 'Picking Some Produce!', date: '01/21/2025', tidbit: 'We are just picking some crops to taste test!' },
+    { src: placeholder18, name: 'Loading The Compost!', date: '11/13/2024', tidbit: 'Ms. Elyse is loading up some compost!' },
+    { src: placeholder19, name: 'I Just Cannot Look Away!', date: '11/13/2024', tidbit: 'It is hard on the eyes, but great on the soil!' },
+    { src: placeholder20, name: 'These Worms Are Chewing Away!', date: '11/13/2024', tidbit: 'Look at one of our helper worms who makes our compost!' },
+    { src: placeholder21, name: 'Look How Much We Saved!', date: '11/13/2024', tidbit: 'Look at all these foods scraps that would have gone to waste!' },
+    { src: placeholder22, name: 'Pink Cauliflower!', date: '01/31/2025', tidbit: 'Look at the pink hue on our cauliflower!' },
+    { src: placeholder23, name: 'Purple Petals!', date: '01/30/2025', tidbit: 'Well these are just the most gorgeous flowers ever!' },
+    { src: placeholder24, name: 'Our Planter Boxes Are Stuffed!', date: '02/07/2025', tidbit: 'Look how full our planter boxes have become!' },
+    { src: placeholder25, name: 'Baby Plants!', date: '11/18/2024', tidbit: 'I wish they would stay this small because they are adorable!' },
+    { src: placeholder26, name: 'Stir Fry Time!', date: '01/29/2025', tidbit: 'We are cutting up our crops to make stir fry!' },
+    { src: placeholder27, name: 'Bok Choy Time!', date: '02/13/2025', tidbit: 'This bok choy we grew is going to be so yummy!' },
+    { src: placeholder28, name: 'Checking It Out!', date: '11/15/2024', tidbit: 'Ms. Elyse is checking up on our baby crops!' },
+    { src: placeholder29, name: 'Bok Choy Galore!', date: '02/12/2025', tidbit: 'I think we hit the bok choy motherload!' },
+    { src: placeholder30, name: 'Loving The Compost!', date: '11/18/2024', tidbit: 'Our crops are just loving this compost!' },
   ];
 
   const handleClick = (src) => { 

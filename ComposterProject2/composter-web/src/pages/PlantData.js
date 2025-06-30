@@ -4,7 +4,7 @@ import GraphsSection from './GraphsSection';
 import './PlantData.css';
 
 function PlantData() {
-  const [selectedGraph, setSelectedGraph] = useState('Compost Production');
+  const [selectedGraph, setSelectedGraph] = useState('Food Scraps Saved');
   const [submissionType, setSubmissionType] = useState('');
   const [showForm, setShowForm] = useState(false);
   const [plantData, setPlantData] = useState({ carrotHeight: '', composter: '1', date: '' });
@@ -154,9 +154,7 @@ function PlantData() {
   <div className="plant-container">
     <div className="graph-header">
       <select value={selectedGraph} onChange={(e) => setSelectedGraph(e.target.value)}>
-        <option value="Compost Production">Compost Production</option>
         <option value="Food Scraps Saved">Food Scraps Saved</option>
-        <option value="Average Carrot Height">Average Carrot Height</option>
       </select>
       <div className="dropdown-button-wrapper">
         <button onClick={toggleDropdown}>+</button>
@@ -165,8 +163,6 @@ function PlantData() {
             <button onClick={() => setIsDropdownVisible(false)}>Back</button>
             <select value={submissionType} onChange={(e) => setSubmissionType(e.target.value)}>
               <option value="">Select Submission Type</option>
-              <option value="Carrot Height">Carrot Height</option>
-              <option value="Compost Produced">Compost Produced</option>
               <option value="Food Scrap Saved">Food Scrap Saved</option>
             </select>
             {submissionType && renderForm()}
